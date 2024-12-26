@@ -4,6 +4,7 @@ import { UMLElementFeatures } from '../uml-element/uml-element-features';
 export enum Locale {
   en = 'en',
   de = 'de',
+  zh = 'zh',
 }
 
 export enum ApollonMode {

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import de from '../../i18n/de.json';
 import en from '../../i18n/en.json';
+import zh from '../../i18n/zh_cn.json';
 import { Locale } from '../../services/editor/editor-types';
 import { I18nContext, I18nProvider as Provider } from './i18n-context';
 
-const defaultLocale = Locale.en;
+const defaultLocale = Locale.zh;
 
 type Props = {
   locale: Locale;
@@ -14,6 +15,7 @@ type Props = {
 const dictionary: { [key in Locale]: object } = {
   [Locale.de]: de,
   [Locale.en]: en,
+  [Locale.zh]: zh,
 };
 
 export class I18nProvider extends Component<Props> {

@@ -1,0 +1,176 @@
+{
+  "views": {
+    "modelling": "建模",
+    "exporting": "交互式",
+    "highlight": "显示交互元素"
+  },
+  "sidebar": {
+    "classAttribute": "+ 属性: 类型",
+    "classMethod": "+ 方法()",
+    "enumAttribute": "案例",
+    "objectAttribute": "属性 = 值"
+  },
+  "popup": {
+    "attributes": "属性",
+    "methods": "方法",
+    "relationship": "关系",
+    "association": "关联",
+    "multiplicity": "多重性",
+    "role": "角色",
+    "messages": "消息",
+    "condition": "条件",
+    "tokens": "令牌",
+    "capacity": "容量"
+  },
+  "assessment": {
+    "assessment": "评估",
+    "score": "分数",
+    "feedback": "反馈",
+    "feedbackPlaceholder": "你可以在这里输入反馈...",
+    "additionalFeedbackPlaceholder": "你可以在这里输入附加反馈..."
+  },
+  "packages": {
+    "ClassDiagram": {
+      "Package": "包",
+      "Class": "类",
+      "AbstractClass": "抽象类",
+      "Interface": "接口",
+      "Enumeration": "枚举",
+      "ClassAttribute": "属性",
+      "ClassMethod": "方法",
+      "ClassAggregation": "聚合",
+      "ClassBidirectional": "双向关联",
+      "ClassComposition": "组合",
+      "ClassDependency": "依赖",
+      "ClassInheritance": "继承",
+      "ClassRealization": "实现",
+      "ClassUnidirectional": "单向关联"
+    },
+    "ObjectDiagram": {
+      "ObjectName": "对象",
+      "ObjectAttribute": "属性",
+      "ObjectMethod": "方法",
+      "ObjectLink": "关系"
+    },
+    "ActivityDiagram": {
+      "Activity": "活动",
+      "ActivityActionNode": "动作",
+      "ActivityFinalNode": "结束节点",
+      "ActivityForkNode": "分叉节点",
+      "ActivityInitialNode": "初始节点",
+      "ActivityMergeNode": "条件节点",
+      "ActivityObjectNode": "对象",
+      "ActivityControlFlow": "控制流"
+    },
+    "UseCaseDiagram": {
+      "UseCase": "用例",
+      "UseCaseActor": "演员",
+      "UseCaseSystem": "系统",
+      "UseCaseAssociation": "关联",
+      "UseCaseExtend": "扩展",
+      "UseCaseGeneralization": "泛化",
+      "UseCaseInclude": "包含"
+    },
+    "CommunicationDiagram": {
+      "ObjectName": "对象",
+      "ObjectAttribute": "属性",
+      "ObjectMethod": "方法",
+      "CommunicationLink": "通信链接"
+    },
+    "ComponentDiagram": {
+      "Component": "组件",
+      "Subsystem": "子系统",
+      "ComponentDependency": "依赖",
+      "ComponentInterface": "接口",
+      "ComponentInterfaceProvided": "提供接口",
+      "ComponentInterfaceRequired": "需要接口"
+    },
+    "DeploymentDiagram": {
+      "DeploymentNode": "节点",
+      "DeploymentComponent": "组件",
+      "DeploymentArtifact": "工件",
+      "DeploymentInterface": "接口",
+      "DeploymentInterfaceProvided": "提供接口",
+      "DeploymentInterfaceRequired": "需要接口",
+      "DeploymentAssociation": "部署关联",
+      "DeploymentDependency": "部署依赖"
+    },
+    "PetriNet": {
+      "PetriNetPlace": "位置",
+      "PetriNetTransition": "转换"
+    },
+    "ReachabilityGraph": {
+      "ReachabilityGraphIsInitialMarking": "是初始标记",
+      "ReachabilityGraphMarking": "标记"
+    },
+    "SyntaxTree": {
+      "SyntaxTreeTerminal": "终结符",
+      "SyntaxTreeNonterminal": "非终结符",
+      "SyntaxTreeLink": "链接"
+    },
+    "Flowchart": {
+      "FlowchartTerminal": "终结符",
+      "FlowchartDecision": "决策",
+      "FlowchartProcess": "过程",
+      "FlowchartFunctionCall": "函数调用",
+      "FlowchartInputOutput": "输入输出",
+      "FlowchartFlowline": "流程线"
+    },
+    "ColorLegend": {
+      "ColorLegend": "颜色说明"
+    },
+    "BPMN": {
+      "BPMNTask": "任务",
+      "BPMNUserTask": "用户任务",
+      "BPMNSendTask": "发送任务",
+      "BPMNReceiveTask": "接收任务",
+      "BPMNManualTask": "手动任务",
+      "BPMNBusinessRuleTask": "业务规则任务",
+      "BPMNScriptTask": "脚本任务",
+      "BPMNSubprocess": "子过程",
+      "BPMNTransaction": "事务",
+      "BPMNCallActivity": "调用活动",
+      "BPMNAnnotation": "注释",
+      "BPMNStartEvent": "开始事件",
+      "BPMNMessageStartEvent": "消息开始事件",
+      "BPMNTimerStartEvent": "定时开始事件",
+      "BPMNConditionalStartEvent": "条件开始事件",
+      "BPMNSignalStartEvent": "信号开始事件",
+      "BPMNIntermediateEvent": "中间事件",
+      "BPMNMessageIntermediateCatchEvent": "消息中间捕获事件",
+      "BPMNMessageIntermediateThrowEvent": "消息中间抛出事件",
+      "BPMNTimerIntermediateCatchEvent": "定时中间捕获事件",
+      "BPMNEscalationIntermediateThrowEvent": "升级中间抛出事件",
+      "BPMNConditionalIntermediateCatchEvent": "条件中间捕获事件",
+      "BPMNLinkIntermediateCatchEvent": "链接中间捕获事件",
+      "BPMNLinkIntermediateThrowEvent": "链接中间抛出事件",
+      "BPMNCompensationIntermediateThrowEvent": "补偿中间抛出事件",
+      "BPMNSignalIntermediateCatchEvent": "信号中间捕获事件",
+      "BPMNSignalIntermediateThrowEvent": "信号中间抛出事件",
+      "BPMNEndEvent": "结束事件",
+      "BPMNMessageEndEvent": "消息结束事件",
+      "BPMNEscalationEndEvent": "升级结束事件",
+      "BPMNErrorEndEvent": "错误结束事件",
+      "BPMNCompensationEndEvent": "补偿结束事件",
+      "BPMNSignalEndEvent": "信号结束事件",
+      "BPMNTerminateEndEvent": "终止结束事件",
+      "BPMNGateway": "网关",
+      "BPMNComplexGateway": "复杂网关",
+      "BPMNEventBasedGateway": "基于事件的网关",
+      "BPMNInclusiveGateway": "包容性网关",
+      "BPMNExclusiveGateway": "排他性网关",
+      "BPMNParallelGateway": "并行网关",
+      "BPMNConversation": "对话",
+      "BPMNCallConversation": "调用对话",
+      "BPMNSequenceFlow": "序列流",
+      "BPMNMessageFlow": "消息流",
+      "BPMNAssociationFlow": "关联流",
+      "BPMNDataAssociationFlow": "数据关联流",
+      "BPMNDataObject": "数据对象",
+      "BPMNPool": "泳池",
+      "BPMNSwimlane": "泳道",
+      "BPMNSwimlanes": "泳道",
+      "BPMNGroup": "组"
+    }
+  }
+}

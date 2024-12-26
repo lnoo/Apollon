@@ -25,6 +25,7 @@
     "postpublish": "pinst --enable",
     "start": "webpack serve --config ./webpack/webpack.dev.js",
     "build": "rm -rf dist && webpack --config ./webpack/webpack.prod.js",
+    "build:pure": "rm -rf dist && webpack --config ./webpack/webpack.pure.js",
     "lint": "npm run lint:ts && npm run lint:css",
     "lint:ts": "eslint -c .eslintrc.js src/main",
     "lint:css": "stylelint 'src/**/*.ts'",
