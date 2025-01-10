@@ -105,7 +105,7 @@ class StylePaneComponent extends Component<Props, State> {
     return (
       <Container>
         <ColorRow
-          title="Fill Color"
+          title="填充颜色"
           condition={fillColor && (fillSelectOpen || noneOpen)}
           color={element?.fillColor}
           open={fillSelectOpen}
@@ -114,7 +114,7 @@ class StylePaneComponent extends Component<Props, State> {
           noDivider={!textColor && !lineColor}
         />
         <ColorRow
-          title="Line Color"
+          title="边框颜色"
           condition={lineColor && (strokeSelectOpen || noneOpen)}
           color={element?.strokeColor}
           open={strokeSelectOpen}
@@ -123,7 +123,7 @@ class StylePaneComponent extends Component<Props, State> {
           noDivider={!textColor}
         />
         <ColorRow
-          title="Text Color"
+          title="文本颜色"
           condition={textColor && (textSelectOpen || noneOpen)}
           color={element?.textColor}
           open={textSelectOpen}
