@@ -7,8 +7,12 @@ module.exports = {
   entry: './src/main/index.ts',
   output: {
     path: outputDir,
-    filename: '[name].js',
-    library: { name: 'apollon', type: 'umd' },
+    filename: 'apollon.js',
+    clean: true,
+    library: { type: 'module' },
+  },
+  experiments: {
+    outputModule: true,
   },
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
