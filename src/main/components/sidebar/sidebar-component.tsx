@@ -46,7 +46,8 @@ class SidebarComponent extends Component<Props> {
 
     return (
       <Container id="modeling-editor-sidebar" data-cy="modeling-editor-sidebar">
-        {this.props.mode === ApollonMode.Exporting && (
+        {/* only modelling mode */}
+        {/* {this.props.mode === ApollonMode.Exporting && (
           <div className="dropdown" style={{ width: 128 }}>
             <select
               value={this.props.view}
@@ -57,7 +58,7 @@ class SidebarComponent extends Component<Props> {
               <option value={ApollonView.Exporting}>{this.props.translate('views.exporting')}</option>
             </select>
           </div>
-        )}
+        )} */}
         {this.props.view === ApollonView.Modelling ? (
           <CreatePane />
         ) : (
