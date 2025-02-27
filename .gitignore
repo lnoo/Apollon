@@ -9,3 +9,4 @@ dist/
 cypress
 test-report.html
 **/.DS_Store
+yarn.lock
