@@ -64,7 +64,7 @@
     },
     "UseCaseDiagram": {
       "UseCase": "用例",
-      "UseCaseActor": "演员",
+      "UseCaseActor": "参与者",
       "UseCaseSystem": "系统",
       "UseCaseAssociation": "关联",
       "UseCaseExtend": "扩展",
