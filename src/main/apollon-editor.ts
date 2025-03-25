@@ -124,7 +124,18 @@ export class ApollonEditor {
     private container: HTMLElement,
     private options: Apollon.ApollonOptions,
   ) {
-    let state: PartialModelState | undefined = options.model ? ModelState.fromModel(options.model) : {};
+    let state: PartialModelState | undefined = options.model
+      ? ModelState.fromModel({
+          // @ts-ignore
+          interactive: {
+            elements: {},
+            relationships: {},
+          },
+          // @ts-ignore
+          assessments: {},
+          ...options.model,
+        })
+      : {};
 
     state = {
       ...state,
