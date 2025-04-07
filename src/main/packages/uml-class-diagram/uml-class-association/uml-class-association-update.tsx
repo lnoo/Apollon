@@ -117,9 +117,9 @@ class ClassAssociationComponent extends Component<Props, State> {
               {this.props.translate('packages.ClassDiagram.ClassRealization')}
             </Dropdown.Item>
           </Dropdown>
-          <Divider />
+          {/* <Divider /> */}
         </section>
-        <section>
+        {/* <section>
           <Header>{source.name}</Header>
           <Flex>
             <Body style={{ marginRight: '0.5em' }}>{this.props.translate('popup.multiplicity')}</Body>
@@ -152,7 +152,7 @@ class ClassAssociationComponent extends Component<Props, State> {
             <Body style={{ marginRight: '0.5em' }}>{this.props.translate('popup.role')}</Body>
             <Textfield value={element.target.role} onChange={this.onUpdate('role', 'target')} />
           </Flex>
-        </section>
+        </section> */}
       </div>
     );
   }
@@ -161,10 +161,10 @@ class ClassAssociationComponent extends Component<Props, State> {
     update(element.id, { type });
   };
 
-  private onUpdate = (type: 'multiplicity' | 'role', end: 'source' | 'target') => (value: string) => {
-    const { element, update } = this.props;
-    update<UMLAssociation>(element.id, { [end]: { ...element[end], [type]: value } });
-  };
+  // private onUpdate = (type: 'multiplicity' | 'role', end: 'source' | 'target') => (value: string) => {
+  //   const { element, update } = this.props;
+  //   update<UMLAssociation>(element.id, { [end]: { ...element[end], [type]: value } });
+  // };
 }
 
 export const UMLClassAssociationUpdate = enhance(ClassAssociationComponent);
