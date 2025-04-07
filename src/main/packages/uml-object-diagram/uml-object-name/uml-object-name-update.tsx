@@ -95,8 +95,8 @@ class ObjectNameComponent extends Component<Props, State> {
                 index === attributes.length - 1
                   ? this.newAttributeField.current?.focus()
                   : this.setState({
-                      fieldToFocus: attributeRefs[index + 1],
-                    })
+                    fieldToFocus: attributeRefs[index + 1],
+                  })
               }
               onDelete={this.delete}
               onRefChange={(ref) => (attributeRefs[index] = ref)}
@@ -141,7 +141,7 @@ class ObjectNameComponent extends Component<Props, State> {
             }}
           />
         </section>
-        <section>
+        {/* <section>
           <Divider />
           <Header>{this.props.translate('popup.methods')}</Header>
           {methods.map((method, index) => (
@@ -185,7 +185,7 @@ class ObjectNameComponent extends Component<Props, State> {
               }
             }}
           />
-        </section>
+        </section> */}
       </div>
     );
   }
