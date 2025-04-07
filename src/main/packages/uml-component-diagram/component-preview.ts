@@ -21,13 +21,13 @@ export const composeComponentPreview: ComposePreview = (
   elements.push(umlComponent);
 
   // UML Subsystem
-  const umlSubsystem = new UMLSubsystem({ name: translate('packages.ComponentDiagram.Subsystem') });
-  umlSubsystem.bounds = {
-    ...umlSubsystem.bounds,
-    width: umlSubsystem.bounds.width,
-    height: umlSubsystem.bounds.height,
-  };
-  elements.push(umlSubsystem);
+  // const umlSubsystem = new UMLSubsystem({ name: translate('packages.ComponentDiagram.Subsystem') });
+  // umlSubsystem.bounds = {
+  //   ...umlSubsystem.bounds,
+  //   width: umlSubsystem.bounds.width,
+  //   height: umlSubsystem.bounds.height,
+  // };
+  // elements.push(umlSubsystem);
 
   // UML Component Interface
   const umlComponentInterface = new UMLComponentInterface({
