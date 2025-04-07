@@ -6,7 +6,7 @@ import { ComposePreview } from '../compose-preview';
 import { UMLAbstractClass } from './uml-abstract-class/uml-abstract-class';
 import { UMLClassAttribute } from './uml-class-attribute/uml-class-attribute';
 import { UMLClassMethod } from './uml-class-method/uml-class-method';
-import { UMLClassPackage } from './uml-class-package/uml-class-package';
+// import { UMLClassPackage } from './uml-class-package/uml-class-package';
 import { UMLClass } from './uml-class/uml-class';
 import { UMLEnumeration } from './uml-enumeration/uml-enumeration';
 import { UMLInterface } from './uml-interface/uml-interface';
@@ -17,13 +17,13 @@ export const composeClassPreview: ComposePreview = (layer: ILayer, translate: (i
   UMLClassifier.nonStereotypeHeaderHeight = computeDimension(1.0, 40);
 
   // UML Package
-  const umlPackage = new UMLClassPackage({ name: translate('packages.ClassDiagram.Package') });
-  umlPackage.bounds = {
-    ...umlPackage.bounds,
-    width: umlPackage.bounds.width,
-    height: umlPackage.bounds.height,
-  };
-  elements.push(umlPackage);
+  // const umlPackage = new UMLClassPackage({ name: translate('packages.ClassDiagram.Package') });
+  // umlPackage.bounds = {
+  //   ...umlPackage.bounds,
+  //   width: umlPackage.bounds.width,
+  //   height: umlPackage.bounds.height,
+  // };
+  // elements.push(umlPackage);
 
   // UML Class
   const umlClass = new UMLClass({ name: translate('packages.ClassDiagram.Class') });
