@@ -71,7 +71,7 @@ export class Dropdown<T> extends Component<Props<T>, State> {
     const { size } = this.props;
 
     return (
-      <StyledDropdownItem size={size} onClick={this.select(item.value)}>
+      <StyledDropdownItem className={`${item.value}`} size={size} onClick={this.select(item.value)}>
         {item.children}
       </StyledDropdownItem>
     );
