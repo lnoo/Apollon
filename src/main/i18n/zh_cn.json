@@ -72,6 +72,7 @@
       "UseCaseInclude": "包含"
     },
     "CommunicationDiagram": {
+      "CommunicationActor": "参与者",
       "ObjectName": "对象",
       "ObjectAttribute": "属性",
       "ObjectMethod": "方法",

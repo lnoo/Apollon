@@ -4,12 +4,24 @@ import { computeDimension } from '../../utils/geometry/boundary';
 import { ComposePreview } from '../compose-preview';
 import { UMLObjectAttribute } from '../uml-object-diagram/uml-object-attribute/uml-object-attribute';
 import { UMLObjectName } from '../uml-object-diagram/uml-object-name/uml-object-name';
+import { UMLUseCaseActor } from '../uml-use-case-diagram/uml-use-case-actor/uml-use-case-actor';
 
 export const composeCommunicationPreview: ComposePreview = (
   layer: ILayer,
   translate: (id: string) => string,
 ): UMLElement[] => {
   const elements: UMLElement[] = [];
+
+  // Actor
+  const umlActor = new UMLUseCaseActor({
+    name: translate('packages.CommunicationDiagram.CommunicationActor'),
+    bounds: {
+      x: 0,
+      y: 0,
+      width: computeDimension(1.0, 80),
+      height: computeDimension(1.0, 140),
+    },
+  });
 
   // Object
   const umlObject = new UMLObjectName({ name: translate('packages.CommunicationDiagram.ObjectName') });
@@ -30,6 +42,7 @@ export const composeCommunicationPreview: ComposePreview = (
   });
   umlObject.ownedElements = [umlObjectAttribute.id];
   elements.push(...(umlObject.render(layer, [umlObjectAttribute]) as UMLElement[]));
+  elements.push(umlActor);
 
   return elements;
 };
