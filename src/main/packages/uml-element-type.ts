@@ -1,4 +1,5 @@
 import { ActivityElementType } from './uml-activity-diagram';
+import { StateElementType } from './uml-state-diagram';
 import { ClassElementType } from './uml-class-diagram';
 import { ComponentElementType } from './uml-component-diagram';
 import { DeploymentElementType } from './uml-deployment-diagram';
@@ -17,6 +18,7 @@ export type UMLElementType =
   | keyof typeof ClassElementType
   | keyof typeof ObjectElementType
   | keyof typeof ActivityElementType
+  | keyof typeof StateElementType
   | keyof typeof UseCaseElementType
   | keyof typeof CommunicationElementType
   | keyof typeof ComponentElementType
@@ -32,6 +34,7 @@ export const UMLElementType = {
   ...ClassElementType,
   ...ObjectElementType,
   ...ActivityElementType,
+  ...StateElementType,
   ...UseCaseElementType,
   ...CommunicationElementType,
   ...ComponentElementType,
@@ -49,6 +52,7 @@ export const UMLElementsForDiagram: { [key in UMLDiagramType]: any } = {
     [UMLDiagramType.ClassDiagram]: ClassElementType,
     [UMLDiagramType.ObjectDiagram]: ObjectElementType,
     [UMLDiagramType.ActivityDiagram]: ActivityElementType,
+    [UMLDiagramType.StateDiagram]: StateElementType,
     [UMLDiagramType.UseCaseDiagram]: UseCaseElementType,
     [UMLDiagramType.CommunicationDiagram]: CommunicationElementType,
     [UMLDiagramType.ComponentDiagram]: ComponentElementType,

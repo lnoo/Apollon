@@ -4,6 +4,7 @@ export const UMLDiagramType = {
   ClassDiagram: 'ClassDiagram',
   ObjectDiagram: 'ObjectDiagram',
   ActivityDiagram: 'ActivityDiagram',
+  StateDiagram: 'StateDiagram',
   UseCaseDiagram: 'UseCaseDiagram',
   CommunicationDiagram: 'CommunicationDiagram',
   ComponentDiagram: 'ComponentDiagram',
@@ -13,4 +14,5 @@ export const UMLDiagramType = {
   SyntaxTree: 'SyntaxTree',
   Flowchart: 'Flowchart',
   BPMN: 'BPMN',
+  // SequenceDiagram: 'SequenceDiagram', //TODO: 添加顺序图
 } as const;

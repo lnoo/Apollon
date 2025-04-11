@@ -66,15 +66,13 @@ const Handle = styled((props) => {
     return (
       <svg {...otherProps}>
         <path
-          d={`M ${
-            alternativePortWidth / 2
-          } 0 v -${alternativePortHeight} h -${alternativePortWidth} v ${alternativePortHeight} Z`}
+          d={`M ${alternativePortWidth / 2
+            } 0 v -${alternativePortHeight} h -${alternativePortWidth} v ${alternativePortHeight} Z`}
         />
         <path
           d={
             `M -${alternativePortCircleSize / 2} -${alternativePortHeight + alternativePortCircleSize / 2}` +
-            ` a ${alternativePortCircleSize / 2} ${
-              alternativePortCircleSize / 2
+            ` a ${alternativePortCircleSize / 2} ${alternativePortCircleSize / 2
             } 0 0 1 ${alternativePortCircleSize} 0` +
             ` a ${alternativePortCircleSize / 2} ${alternativePortCircleSize / 2} 0 0 1 -${alternativePortCircleSize} 0`
           }
@@ -103,7 +101,7 @@ const Handle = styled((props) => {
         : direction === Direction.Down || direction === Direction.Bottomright || direction === Direction.Bottomleft
           ? 180
           : -90,
-}))<{ rotate: number }>`
+})) <{ rotate: number }>`
   cursor: crosshair;
   pointer-events: all;
 
@@ -156,7 +154,7 @@ export const connectable = (
           {props.children}
           {(hovered || selected || connecting || reconnecting) && (
             <>
-              {this.props.type !== 'ActivityForkNode' && (
+              {!['ActivityForkNode', 'StateForkNode'].includes(this.props.type) && (
                 <Handle
                   ports={ports}
                   direction={Direction.Up}
@@ -165,7 +163,7 @@ export const connectable = (
                   alternativePortVisualization={features.alternativePortVisualization}
                 />
               )}
-              {this.props.type !== 'ActivityForkNodeHorizontal' && (
+              {!['ActivityForkNodeHorizontal', 'StateForkNodeHorizontal'].includes(this.props.type) && (
                 <Handle
                   ports={ports}
                   direction={Direction.Right}
@@ -174,7 +172,7 @@ export const connectable = (
                   alternativePortVisualization={features.alternativePortVisualization}
                 />
               )}
-              {this.props.type !== 'ActivityForkNode' && (
+              {!['ActivityForkNode', 'StateForkNode'].includes(this.props.type) && (
                 <Handle
                   ports={ports}
                   direction={Direction.Down}
@@ -184,7 +182,7 @@ export const connectable = (
                 />
               )}
 
-              {this.props.type !== 'ActivityForkNodeHorizontal' && (
+              {!['ActivityForkNodeHorizontal', 'StateForkNodeHorizontal'].includes(this.props.type) && (
                 <Handle
                   ports={ports}
                   direction={Direction.Left}
@@ -194,7 +192,7 @@ export const connectable = (
                 />
               )}
 
-              {this.props.type === 'ActivityForkNode' && this.props.element.bounds.height > 120 && (
+              {!['ActivityForkNode', 'StateForkNode'].includes(this.props.type) && this.props.element.bounds.height > 120 && (
                 <>
                   <Handle
                     ports={ports}
@@ -227,7 +225,7 @@ export const connectable = (
                 </>
               )}
 
-              {this.props.type === 'ActivityForkNodeHorizontal' && this.props.element.bounds.width > 120 && (
+              {!['ActivityForkNodeHorizontal', 'StateForkNodeHorizontal'].includes(this.props.type) && this.props.element.bounds.width > 120 && (
                 <>
                   <Handle
                     ports={ports}
@@ -320,7 +318,7 @@ export const connectable = (
           key,
           distance: Math.sqrt(
             Math.pow(relativePortLocation[key as Direction].x - relEventPosition.x, 2) +
-              Math.pow(relativePortLocation[key as Direction].y - relEventPosition.y, 2),
+            Math.pow(relativePortLocation[key as Direction].y - relEventPosition.y, 2),
           ),
         }));
 
