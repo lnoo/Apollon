@@ -1,6 +1,6 @@
 import { IUMLRelationship, UMLRelationship } from '../services/uml-relationship/uml-relationship';
 import { UMLActivityControlFlow } from './uml-activity-diagram/uml-activity-control-flow/uml-activity-control-flow';
-import { UMLStateControlFlow } from './uml-State-diagram/uml-State-control-flow/uml-State-control-flow';
+import { UMLStateControlFlow } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow';
 import { UMLClassAggregation } from './uml-class-diagram/uml-class-aggregation/uml-class-aggregation';
 import { UMLClassBidirectional } from './uml-class-diagram/uml-class-bidirectional/uml-class-bidirectional';
 import { UMLClassComposition } from './uml-class-diagram/uml-class-composition/uml-class-composition';

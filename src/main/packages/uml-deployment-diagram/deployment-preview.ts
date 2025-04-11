@@ -33,14 +33,14 @@ export const composeDeploymentPreview: ComposePreview = (
   elements.push(umlComponent);
 
   // UML Deployment Artifact
-  const umlDeploymentArtifact = new UMLDeploymentArtifact({
-    name: translate('packages.DeploymentDiagram.DeploymentArtifact'),
-  });
-  umlDeploymentArtifact.bounds = {
-    ...umlDeploymentArtifact.bounds,
-    width: umlDeploymentArtifact.bounds.width,
-  };
-  elements.push(umlDeploymentArtifact);
+  // const umlDeploymentArtifact = new UMLDeploymentArtifact({
+  //   name: translate('packages.DeploymentDiagram.DeploymentArtifact'),
+  // });
+  // umlDeploymentArtifact.bounds = {
+  //   ...umlDeploymentArtifact.bounds,
+  //   width: umlDeploymentArtifact.bounds.width,
+  // };
+  // elements.push(umlDeploymentArtifact);
 
   // UML Deployment Interface
   const umlDeploymentInterface = new UMLDeploymentInterface({
