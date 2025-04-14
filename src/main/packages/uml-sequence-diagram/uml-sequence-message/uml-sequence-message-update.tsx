@@ -13,7 +13,7 @@ import { localized } from '../../../components/i18n/localized';
 import { ModelState } from '../../../components/store/model-state';
 import { UMLElementRepository } from '../../../services/uml-element/uml-element-repository';
 import { UMLRelationshipRepository } from '../../../services/uml-relationship/uml-relationship-repository';
-import { UMLSequenceControlFlow } from './uml-sequence-control-flow';
+import { UMLSequenceMessage } from './uml-sequence-message';
 import { ColorButton } from '../../../components/controls/color-button/color-button';
 import { StylePane } from '../../../components/style-pane/style-pane';
 
@@ -25,7 +25,7 @@ const Flex = styled.div`
 
 type State = { colorOpen: boolean };
 
-class SequenceControlFlowUpdate extends Component<Props, State> {
+class SequenceMessageUpdate extends Component<Props, State> {
   state = { colorOpen: false };
 
   private toggleColor = () => {
@@ -42,7 +42,7 @@ class SequenceControlFlowUpdate extends Component<Props, State> {
         <section>
           <Flex>
             <Header gutter={false} style={{ flexGrow: 1 }}>
-              {this.props.translate('packages.SequenceDiagram.SequenceControlFlow')}
+              {this.props.translate('packages.SequenceDiagram.SequenceMessage')}
             </Header>
             <ColorButton onClick={this.toggleColor} />
             <Button color="link" onClick={() => this.props.flip(element.id)}>
@@ -74,7 +74,7 @@ class SequenceControlFlowUpdate extends Component<Props, State> {
 }
 
 type OwnProps = {
-  element: UMLSequenceControlFlow;
+  element: UMLSequenceMessage;
 };
 
 type SequenceProps = {};
@@ -96,4 +96,4 @@ const enhance = compose<ComponentClass<OwnProps>>(
   }),
 );
 
-export const UMLSequenceControlFlowUpdate = enhance(SequenceControlFlowUpdate);
+export const UMLSequenceMessageUpdate = enhance(SequenceMessageUpdate);

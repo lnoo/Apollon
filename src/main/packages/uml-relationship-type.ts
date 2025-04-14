@@ -52,7 +52,7 @@ export const DefaultUMLRelationshipType: { [key in UMLDiagramType]: UMLRelations
   [UMLDiagramType.ObjectDiagram]: ObjectRelationshipType.ObjectLink,
   [UMLDiagramType.ActivityDiagram]: ActivityRelationshipType.ActivityControlFlow,
   [UMLDiagramType.StateDiagram]: StateRelationshipType.StateControlFlow,
-  [UMLDiagramType.SequenceDiagram]: SequenceRelationshipType.SequenceControlFlow,
+  [UMLDiagramType.SequenceDiagram]: SequenceRelationshipType.SequenceMessage,
   [UMLDiagramType.UseCaseDiagram]: UseCaseRelationshipType.UseCaseAssociation,
   [UMLDiagramType.CommunicationDiagram]: CommunicationRelationshipType.CommunicationLink,
   [UMLDiagramType.ComponentDiagram]: ComponentRelationshipType.ComponentInterfaceProvided,

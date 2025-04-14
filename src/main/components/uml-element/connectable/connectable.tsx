@@ -154,7 +154,7 @@ export const connectable = (
           {props.children}
           {(hovered || selected || connecting || reconnecting) && (
             <>
-              {!['ActivityForkNode', 'StateForkNode'].includes(this.props.type) && (
+              {!['ActivityForkNode', 'StateForkNode', 'SequenceActivation'].includes(this.props.type) && (
                 <Handle
                   ports={ports}
                   direction={Direction.Up}
@@ -172,7 +172,7 @@ export const connectable = (
                   alternativePortVisualization={features.alternativePortVisualization}
                 />
               )}
-              {!['ActivityForkNode', 'StateForkNode'].includes(this.props.type) && (
+              {!['ActivityForkNode', 'StateForkNode', 'SequenceActivation'].includes(this.props.type) && (
                 <Handle
                   ports={ports}
                   direction={Direction.Down}
@@ -192,7 +192,7 @@ export const connectable = (
                 />
               )}
 
-              {!['ActivityForkNode', 'StateForkNode'].includes(this.props.type) && this.props.element.bounds.height > 120 && (
+              {!['ActivityForkNode', 'StateForkNode', 'SequenceActivation'].includes(this.props.type) && this.props.element.bounds.height > 120 && (
                 <>
                   <Handle
                     ports={ports}

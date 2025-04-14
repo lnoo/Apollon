@@ -1,5 +1,5 @@
 import React, { ComponentType, FunctionComponent } from 'react';
-import { UMLSequenceForkNode } from './uml-sequence-fork-node';
+import { UMLSequenceActivation } from './uml-sequence-activation';
 import { withTheme, withThemeProps } from '../../../components/theme/styles';
 import { compose } from 'redux';
 import { connect, ConnectedComponent } from 'react-redux';
@@ -8,7 +8,7 @@ import { ApollonView } from '../../../services/editor/editor-types';
 import { ThemedRectContrast } from '../../../components/theme/themedComponents';
 
 type OwnProps = {
-  element: UMLSequenceForkNode;
+  element: UMLSequenceActivation;
 };
 
 type SequenceProps = { interactive: boolean; interactable: boolean };
@@ -25,7 +25,7 @@ const enhance = compose<ConnectedComponent<ComponentType<Props>, OwnProps>>(
   })),
 );
 
-const UMLSequenceForkNodeC: FunctionComponent<Props> = ({ element, interactive, interactable, theme }) => {
+const UMLSequenceActivationC: FunctionComponent<Props> = ({ element, interactive, interactable, theme }) => {
   return (
     <g>
       <ThemedRectContrast
@@ -39,4 +39,4 @@ const UMLSequenceForkNodeC: FunctionComponent<Props> = ({ element, interactive, 
   );
 };
 
-export const UMLSequenceForkNodeComponent = enhance(UMLSequenceForkNodeC);
+export const UMLSequenceActivationComponent = enhance(UMLSequenceActivationC);

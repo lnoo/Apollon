@@ -2,7 +2,7 @@ import { IUMLRelationship, UMLRelationship } from '../services/uml-relationship/
 import { UMLActivityControlFlow } from './uml-activity-diagram/uml-activity-control-flow/uml-activity-control-flow';
 import { UMLActivityObjectFlow } from './uml-activity-diagram/uml-activity-object-flow/uml-activity-object-flow';
 import { UMLStateControlFlow } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow';
-import { UMLSequenceControlFlow } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow';
+import { UMLSequenceMessage } from './uml-sequence-diagram/uml-sequence-message/uml-sequence-message';
 import { UMLClassAggregation } from './uml-class-diagram/uml-class-aggregation/uml-class-aggregation';
 import { UMLClassComposition } from './uml-class-diagram/uml-class-composition/uml-class-composition';
 import { UMLClassDependency } from './uml-class-diagram/uml-class-dependency/uml-class-dependency';
@@ -42,7 +42,7 @@ export const UMLRelationships = {
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlow,
   [UMLRelationshipType.ActivityObjectFlow]: UMLActivityObjectFlow,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlow,
-  [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlow,
+  [UMLRelationshipType.SequenceMessage]: UMLSequenceMessage,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociation,
   [UMLRelationshipType.UseCaseExtend]: UMLUseCaseExtend,
   [UMLRelationshipType.UseCaseGeneralization]: UMLUseCaseGeneralization,

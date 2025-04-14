@@ -7,25 +7,25 @@ import { IBoundary } from '../../../utils/geometry/boundary';
 import { UMLElementType } from '../../uml-element-type';
 import { DeepPartial } from 'redux';
 
-export class UMLSequenceForkNode extends UMLElement {
-  static supportedRelationships = [SequenceRelationshipType.SequenceControlFlow];
+export class UMLSequenceActivation extends UMLElement {
+  static supportedRelationships = [SequenceRelationshipType.SequenceMessage];
   static features: UMLElementFeatures = { ...UMLElement.features, updatable: false };
   static defaultWidth = 20;
   static defaultHeight = 60;
 
-  type: UMLElementType = SequenceElementType.SequenceForkNode;
+  type: UMLElementType = SequenceElementType.SequenceActivation;
   bounds: IBoundary = {
     ...this.bounds,
   };
 
   constructor(values?: DeepPartial<IUMLElement>) {
     super(values);
-    this.bounds.height = (values && values.bounds && values.bounds.height) || UMLSequenceForkNode.defaultHeight;
-    this.bounds.width = UMLSequenceForkNode.defaultWidth;
+    this.bounds.height = (values && values.bounds && values.bounds.height) || UMLSequenceActivation.defaultHeight;
+    this.bounds.width = UMLSequenceActivation.defaultWidth;
   }
 
   render(layer: ILayer): ILayoutable[] {
-    this.bounds.height = Math.max(this.bounds.height, UMLSequenceForkNode.defaultHeight);
+    this.bounds.height = Math.max(this.bounds.height, UMLSequenceActivation.defaultHeight);
     return [this];
   }
 }

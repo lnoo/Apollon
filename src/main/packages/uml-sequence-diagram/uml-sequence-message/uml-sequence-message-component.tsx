@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import { Point } from '../../../utils/geometry/point';
-import { UMLSequenceControlFlow } from './uml-sequence-control-flow';
+import { UMLSequenceMessage } from './uml-sequence-message';
 import { ThemedPath, ThemedPolyline } from '../../../components/theme/themedComponents';
 
-export const UMLSequenceControlFlowComponent: FunctionComponent<Props> = ({ element }) => {
+export const UMLSequenceMessageComponent: FunctionComponent<Props> = ({ element }) => {
   let position = { x: 0, y: 0 };
   let direction: 'v' | 'h' = 'v';
   const path = element.path.map((point) => new Point(point.x, point.y));
@@ -72,5 +72,5 @@ export const UMLSequenceControlFlowComponent: FunctionComponent<Props> = ({ elem
 };
 
 interface Props {
-  element: UMLSequenceControlFlow;
+  element: UMLSequenceMessage;
 }

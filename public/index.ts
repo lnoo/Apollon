@@ -7,7 +7,7 @@ let editor: Apollon.ApollonEditor | null = null;
 const model = JSON.parse(window.localStorage.getItem('apollon')!);
 let options: Apollon.ApollonOptions = {
   model,
-  type: model.type,
+  type: model?.type,
   colorEnabled: true,
   scale: 0.8,
 };

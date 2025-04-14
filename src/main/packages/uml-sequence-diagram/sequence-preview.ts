@@ -2,7 +2,7 @@ import { ILayer } from '../../services/layouter/layer';
 import { UMLElement } from '../../services/uml-element/uml-element';
 import { ComposePreview } from '../compose-preview';
 import { computeDimension } from '../../utils/geometry/boundary';
-import { UMLSequenceForkNode } from './uml-sequence-fork-node/uml-sequence-fork-node';
+import { UMLSequenceActivation } from './uml-sequence-activation/uml-sequence-activation';
 import { UMLSequenceLine } from './uml-sequence-line/uml-sequence-line';
 import { UMLSequenceObjectNode } from './uml-sequence-object-node/uml-sequence-object-node';
 import { UMLUseCaseActor } from '../uml-use-case-diagram/uml-use-case-actor/uml-use-case-actor';
@@ -39,9 +39,9 @@ export const composeSequencePreview: ComposePreview = (
   elements.push(sequenceObjectNode);
 
   // Sequence Fork Node
-  UMLSequenceForkNode.defaultWidth = Math.round(20 / 10) * 10;
-  UMLSequenceForkNode.defaultHeight = Math.round(60 / 10) * 10;
-  const sequenceForkNode = new UMLSequenceForkNode();
+  UMLSequenceActivation.defaultWidth = Math.round(20 / 10) * 10;
+  UMLSequenceActivation.defaultHeight = Math.round(60 / 10) * 10;
+  const sequenceForkNode = new UMLSequenceActivation();
   elements.push(sequenceForkNode);
 
   UMLSequenceLine.defaultWidth = Math.round(20 / 10) * 10;

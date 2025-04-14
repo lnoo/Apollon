@@ -8,7 +8,7 @@ import { UMLElementType } from '../../uml-element-type';
 import { DeepPartial } from 'redux';
 
 export class UMLSequenceLine extends UMLElement {
-  static supportedRelationships = [SequenceRelationshipType.SequenceControlFlow];
+  static supportedRelationships = [SequenceRelationshipType.SequenceMessage];
   static features: UMLElementFeatures = { ...UMLElement.features, connectable: false, updatable: false };
   static defaultWidth = 20;
   static defaultHeight = 60;

@@ -1,11 +1,10 @@
 export const SequenceElementType = {
-  Sequence: 'Sequence',
   SequenceActor: 'SequenceActor',
-  SequenceForkNode: 'SequenceForkNode',
+  SequenceActivation: 'SequenceActivation',
   SequenceLine: 'SequenceLine',
   SequenceObjectNode: 'SequenceObjectNode',
 } as const;
 
 export const SequenceRelationshipType = {
-  SequenceControlFlow: 'SequenceControlFlow',
+  SequenceMessage: 'SequenceMessage',
 } as const;

@@ -12,10 +12,9 @@ import { UMLActivityInitialNodeComponent } from './uml-activity-diagram/uml-acti
 import { UMLActivityMergeNodeComponent } from './uml-activity-diagram/uml-activity-merge-node/uml-activity-merge-node-component';
 import { UMLActivityObjectNodeComponent } from './uml-activity-diagram/uml-activity-object-node/uml-activity-object-node-component';
 import { UMLActivityComponent } from './uml-activity-diagram/uml-activity/uml-activity-component';
-import { UMLSequenceComponent } from './uml-sequence-diagram/uml-sequence/uml-sequence-component';
-import { UMLSequenceForkNodeComponent } from './uml-sequence-diagram/uml-sequence-fork-node/uml-sequence-fork-node-component';
+import { UMLSequenceActivationComponent } from './uml-sequence-diagram/uml-sequence-activation/uml-sequence-activation-component';
 import { UMLSequenceLineComponent } from './uml-sequence-diagram/uml-sequence-line/uml-sequence-line-component';
-import { UMLSequenceControlFlowComponent } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow-component';
+import { UMLSequenceMessageComponent } from './uml-sequence-diagram/uml-sequence-message/uml-sequence-message-component';
 import { UMLSequenceObjectNodeComponent } from './uml-sequence-diagram/uml-sequence-object-node/uml-sequence-object-node-component';
 import { UMLStateControlFlowComponent } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow-component';
 import { UMLStateFinalNodeComponent } from './uml-state-diagram/uml-state-final-node/uml-state-final-node-component';
@@ -100,9 +99,8 @@ export const Components: {
   [UMLElementType.ActivityInitialNode]: UMLActivityInitialNodeComponent,
   [UMLElementType.ActivityMergeNode]: UMLActivityMergeNodeComponent,
   [UMLElementType.ActivityObjectNode]: UMLActivityObjectNodeComponent,
-  [UMLElementType.Sequence]: UMLSequenceComponent,
   [UMLElementType.SequenceActor]: UMLUseCaseActorComponent,
-  [UMLElementType.SequenceForkNode]: UMLSequenceForkNodeComponent,
+  [UMLElementType.SequenceActivation]: UMLSequenceActivationComponent,
   [UMLElementType.SequenceLine]: UMLSequenceLineComponent,
   [UMLElementType.SequenceObjectNode]: UMLSequenceObjectNodeComponent,
   [UMLElementType.State]: UMLStateComponent,
@@ -158,7 +156,7 @@ export const Components: {
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlowComponent,
   [UMLRelationshipType.ActivityObjectFlow]: UMLActivityObjectFlowComponent,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlowComponent,
-  [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlowComponent,
+  [UMLRelationshipType.SequenceMessage]: UMLSequenceMessageComponent,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociationComponent,
   [UMLRelationshipType.UseCaseExtend]: UMLUseCaseExtendComponent,
   [UMLRelationshipType.UseCaseGeneralization]: UMLUseCaseGeneralizationComponent,
