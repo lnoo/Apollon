@@ -59,7 +59,8 @@
       "ActivityInitialNode": "初始节点",
       "ActivityMergeNode": "条件节点",
       "ActivityObjectNode": "对象",
-      "ActivityControlFlow": "控制流"
+      "ActivityControlFlow": "控制流",
+      "ActivityObjectFlow": "对象流"
     },
     "StateDiagram": {
       "State": "状态",

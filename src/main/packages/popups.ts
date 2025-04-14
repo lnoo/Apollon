@@ -3,6 +3,7 @@ import { DefaultPopup } from './common/default-popup';
 import { DefaultRelationshipPopup } from './common/default-relationship-popup';
 import { UMLClassifierUpdate } from './common/uml-classifier/uml-classifier-update';
 import { UMLActivityControlFlowUpdate } from './uml-activity-diagram/uml-activity-control-flow/uml-activity-control-flow-update';
+import { UMLActivityObjectFlowUpdate } from './uml-activity-diagram/uml-activity-object-flow/uml-activity-object-flow-update';
 import { UMLActivityMergeNodeUpdate } from './uml-activity-diagram/uml-activity-merge-node/uml-activity-merge-node-update';
 import { UMLStateControlFlowUpdate } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow-update';
 import { UMLStateMergeNodeUpdate } from './uml-state-diagram/uml-state-merge-node/uml-state-merge-node-update';
@@ -119,6 +120,7 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLRelationshipType.ClassUnidirectional]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ObjectLink]: DefaultRelationshipPopup,
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlowUpdate,
+  [UMLRelationshipType.ActivityObjectFlow]: UMLActivityObjectFlowUpdate,
   [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlowUpdate,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlowUpdate,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociationUpdate,

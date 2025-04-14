@@ -6,7 +6,10 @@ import { calculateNameBounds } from '../../../utils/name-bounds';
 import { UMLElementType } from '../../uml-element-type';
 
 export class UMLActivityObjectNode extends UMLElement {
-  static supportedRelationships = [ActivityRelationshipType.ActivityControlFlow];
+  static supportedRelationships = [
+    ActivityRelationshipType.ActivityControlFlow,
+    ActivityRelationshipType.ActivityObjectFlow,
+  ];
 
   type: UMLElementType = ActivityElementType.ActivityObjectNode;
 

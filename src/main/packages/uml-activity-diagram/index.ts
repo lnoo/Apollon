@@ -11,4 +11,5 @@ export const ActivityElementType = {
 
 export const ActivityRelationshipType = {
   ActivityControlFlow: 'ActivityControlFlow',
+  ActivityObjectFlow: 'ActivityObjectFlow',
 } as const;

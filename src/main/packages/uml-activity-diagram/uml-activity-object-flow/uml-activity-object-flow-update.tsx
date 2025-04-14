@@ -13,7 +13,7 @@ import { localized } from '../../../components/i18n/localized';
 import { ModelState } from '../../../components/store/model-state';
 import { UMLElementRepository } from '../../../services/uml-element/uml-element-repository';
 import { UMLRelationshipRepository } from '../../../services/uml-relationship/uml-relationship-repository';
-import { UMLActivityControlFlow } from './uml-activity-control-flow';
+import { UMLActivityObjectFlow } from './uml-activity-object-flow';
 import { ColorButton } from '../../../components/controls/color-button/color-button';
 import { StylePane } from '../../../components/style-pane/style-pane';
 import { Dropdown } from '../../../components/controls/dropdown/dropdown';
@@ -27,7 +27,7 @@ const Flex = styled.div`
 
 type State = { colorOpen: boolean };
 
-class ActivityControlFlowUpdate extends Component<Props, State> {
+class ActivityObjectFlowUpdate extends Component<Props, State> {
   state = { colorOpen: false };
 
   private toggleColor = () => {
@@ -44,7 +44,7 @@ class ActivityControlFlowUpdate extends Component<Props, State> {
         <section>
           <Flex>
             <Header gutter={false} style={{ flexGrow: 1 }}>
-              {this.props.translate('packages.ActivityDiagram.ActivityControlFlow')}
+              {this.props.translate('packages.ActivityDiagram.ActivityObjectFlow')}
             </Header>
             <ColorButton onClick={this.toggleColor} />
             <Button color="link" onClick={() => this.props.flip(element.id)}>
@@ -92,7 +92,7 @@ class ActivityControlFlowUpdate extends Component<Props, State> {
 }
 
 type OwnProps = {
-  element: UMLActivityControlFlow;
+  element: UMLActivityObjectFlow;
 };
 
 type StateProps = {};
@@ -114,4 +114,4 @@ const enhance = compose<ComponentClass<OwnProps>>(
   }),
 );
 
-export const UMLActivityControlFlowUpdate = enhance(ActivityControlFlowUpdate);
+export const UMLActivityObjectFlowUpdate = enhance(ActivityObjectFlowUpdate);

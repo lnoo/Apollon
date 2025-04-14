@@ -4,6 +4,7 @@ import { UMLClassifierComponent } from './common/uml-classifier/uml-classifier-c
 import { UMLClassifierMemberComponent } from './common/uml-classifier/uml-classifier-member-component';
 import { UMLActivityActionNodeComponent } from './uml-activity-diagram/uml-activity-action-node/uml-activity-action-node-component';
 import { UMLActivityControlFlowComponent } from './uml-activity-diagram/uml-activity-control-flow/uml-activity-control-flow-component';
+import { UMLActivityObjectFlowComponent } from './uml-activity-diagram/uml-activity-object-flow/uml-activity-object-flow-component';
 import { UMLActivityFinalNodeComponent } from './uml-activity-diagram/uml-activity-final-node/uml-activity-final-node-component';
 import { UMLActivityForkNodeComponent } from './uml-activity-diagram/uml-activity-fork-node/uml-activity-fork-node-component';
 import { UMLActivityForkNodeHorizontalComponent } from './uml-activity-diagram/uml-activity-fork-node-horizontal/uml-activity-fork-node-horizontal-component';
@@ -153,6 +154,7 @@ export const Components: {
   [UMLRelationshipType.ClassUnidirectional]: UMLAssociationComponent,
   [UMLRelationshipType.ObjectLink]: UMLObjectLinkComponent,
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlowComponent,
+  [UMLRelationshipType.ActivityObjectFlow]: UMLActivityObjectFlowComponent,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlowComponent,
   [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlowComponent,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociationComponent,
