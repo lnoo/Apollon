@@ -39,12 +39,11 @@
       "ClassAttribute": "属性",
       "ClassMethod": "方法",
       "ClassAggregation": "聚合",
-      "ClassBidirectional": "双向关联",
       "ClassComposition": "组合",
       "ClassDependency": "依赖",
       "ClassInheritance": "继承",
       "ClassRealization": "实现",
-      "ClassUnidirectional": "单向关联"
+      "ClassUnidirectional": "关联"
     },
     "ObjectDiagram": {
       "ObjectName": "对象",

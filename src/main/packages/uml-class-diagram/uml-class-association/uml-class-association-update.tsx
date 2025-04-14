@@ -101,9 +101,6 @@ class ClassAssociationComponent extends Component<Props, State> {
             <Dropdown.Item value={ClassRelationshipType.ClassUnidirectional}>
               {this.props.translate('packages.ClassDiagram.ClassUnidirectional')}
             </Dropdown.Item>
-            <Dropdown.Item value={ClassRelationshipType.ClassBidirectional}>
-              {this.props.translate('packages.ClassDiagram.ClassBidirectional')}
-            </Dropdown.Item>
             <Dropdown.Item value={ClassRelationshipType.ClassComposition}>
               {this.props.translate('packages.ClassDiagram.ClassComposition')}
             </Dropdown.Item>

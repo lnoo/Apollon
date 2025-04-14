@@ -112,7 +112,6 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLElementType.BPMNSwimlane]: DefaultPopup,
   // Relationships
   [UMLRelationshipType.ClassAggregation]: UMLClassAssociationUpdate,
-  [UMLRelationshipType.ClassBidirectional]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ClassComposition]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ClassDependency]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ClassInheritance]: UMLClassAssociationUpdate,

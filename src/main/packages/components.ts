@@ -146,7 +146,6 @@ export const Components: {
   [UMLElementType.BPMNSwimlane]: BPMNSwimlaneComponent,
   [UMLElementType.BPMNGroup]: BPMNGroupComponent,
   [UMLRelationshipType.ClassAggregation]: UMLAssociationComponent,
-  [UMLRelationshipType.ClassBidirectional]: UMLAssociationComponent,
   [UMLRelationshipType.ClassComposition]: UMLAssociationComponent,
   [UMLRelationshipType.ClassDependency]: UMLAssociationComponent,
   [UMLRelationshipType.ClassInheritance]: UMLAssociationComponent,

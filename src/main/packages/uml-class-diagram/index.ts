@@ -9,7 +9,6 @@ export const ClassElementType = {
 } as const;
 
 export const ClassRelationshipType = {
-  ClassBidirectional: 'ClassBidirectional',
   ClassUnidirectional: 'ClassUnidirectional',
   ClassInheritance: 'ClassInheritance',
   ClassRealization: 'ClassRealization',

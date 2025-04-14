@@ -3,7 +3,6 @@ import { UMLActivityControlFlow } from './uml-activity-diagram/uml-activity-cont
 import { UMLStateControlFlow } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow';
 import { UMLSequenceControlFlow } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow';
 import { UMLClassAggregation } from './uml-class-diagram/uml-class-aggregation/uml-class-aggregation';
-import { UMLClassBidirectional } from './uml-class-diagram/uml-class-bidirectional/uml-class-bidirectional';
 import { UMLClassComposition } from './uml-class-diagram/uml-class-composition/uml-class-composition';
 import { UMLClassDependency } from './uml-class-diagram/uml-class-dependency/uml-class-dependency';
 import { UMLClassInheritance } from './uml-class-diagram/uml-class-inheritance/uml-class-inheritance';
@@ -33,7 +32,6 @@ type UMLRelationships = { [key in UMLRelationshipType]: new (values?: IUMLRelati
 
 export const UMLRelationships = {
   [UMLRelationshipType.ClassAggregation]: UMLClassAggregation,
-  [UMLRelationshipType.ClassBidirectional]: UMLClassBidirectional,
   [UMLRelationshipType.ClassComposition]: UMLClassComposition,
   [UMLRelationshipType.ClassDependency]: UMLClassDependency,
   [UMLRelationshipType.ClassInheritance]: UMLClassInheritance,

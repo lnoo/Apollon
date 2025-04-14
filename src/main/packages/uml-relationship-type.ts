@@ -48,7 +48,7 @@ export const UMLRelationshipType = {
 };
 
 export const DefaultUMLRelationshipType: { [key in UMLDiagramType]: UMLRelationshipType } = {
-  [UMLDiagramType.ClassDiagram]: ClassRelationshipType.ClassBidirectional,
+  [UMLDiagramType.ClassDiagram]: ClassRelationshipType.ClassUnidirectional,
   [UMLDiagramType.ObjectDiagram]: ObjectRelationshipType.ObjectLink,
   [UMLDiagramType.ActivityDiagram]: ActivityRelationshipType.ActivityControlFlow,
   [UMLDiagramType.StateDiagram]: StateRelationshipType.StateControlFlow,
