@@ -1,14 +1,15 @@
 import React, { ComponentType, FunctionComponent } from 'react';
-import { UMLSequenceForkNode } from './uml-sequence-fork-node';
+import { UMLSequenceLine } from './uml-sequence-line';
 import { withTheme, withThemeProps } from '../../../components/theme/styles';
 import { compose } from 'redux';
 import { connect, ConnectedComponent } from 'react-redux';
 import { ModelState } from '../../../components/store/model-state';
 import { ApollonView } from '../../../services/editor/editor-types';
-import { ThemedRectContrast } from '../../../components/theme/themedComponents';
+import { ThemedPath } from '../../../components/theme/themedComponents';
+import { Point } from '../../../utils/geometry/point';
 
 type OwnProps = {
-  element: UMLSequenceForkNode;
+  element: UMLSequenceLine;
 };
 
 type SequenceProps = { interactive: boolean; interactable: boolean };
@@ -25,18 +26,18 @@ const enhance = compose<ConnectedComponent<ComponentType<Props>, OwnProps>>(
   })),
 );
 
-const UMLSequenceForkNodeC: FunctionComponent<Props> = ({ element, interactive, interactable, theme }) => {
+const UMLSequenceLineC: FunctionComponent<Props> = ({ element }) => {
+  const { width, height } = element.bounds
+  const startX = 0 + (width / 2)
+  const startY = 0
+  const [start, end] = [new Point(startX, startY), new Point(startX, height)];
+
   return (
     <g>
-      <ThemedRectContrast
-        width={element.bounds.width}
-        height={element.bounds.height}
-        strokeColor="var(--apollon-primary-contrast)"
-        fillColor="var(--apollon-background)"
-        fillOpacity={1}
-      />
+      <ThemedPath id={element.id} d={`M ${start.x} ${start.y} L ${end.x} ${end.y}`} strokeColor='transparent' strokeWidth={20} strokeDasharray={7} />
+      <ThemedPath id={element.id} d={`M ${start.x} ${start.y} L ${end.x} ${end.y}`} strokeColor={element.strokeColor} strokeWidth={1} strokeDasharray={7} />
     </g>
   );
 };
 
-export const UMLSequenceForkNodeComponent = enhance(UMLSequenceForkNodeC);
+export const UMLSequenceLineComponent = enhance(UMLSequenceLineC);

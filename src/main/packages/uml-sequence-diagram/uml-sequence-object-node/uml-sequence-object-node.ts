@@ -7,6 +7,7 @@ import { UMLElementType } from '../../uml-element-type';
 
 export class UMLSequenceObjectNode extends UMLElement {
   static supportedRelationships = [SequenceRelationshipType.SequenceControlFlow];
+  static features = { ...UMLElement.features, connectable: false };
 
   type: UMLElementType = SequenceElementType.SequenceObjectNode;
 

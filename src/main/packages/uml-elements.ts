@@ -14,6 +14,7 @@ import { UMLStateMergeNode } from './uml-state-diagram/uml-state-merge-node/uml-
 import { UMLState } from './uml-state-diagram/uml-state/uml-state';
 import { UMLUseCaseActor as UMLSequenceActor } from './uml-use-case-diagram/uml-use-case-actor/uml-use-case-actor';
 import { UMLSequenceForkNode } from './uml-sequence-diagram/uml-sequence-fork-node/uml-sequence-fork-node';
+import { UMLSequenceLine } from './uml-sequence-diagram/uml-sequence-line/uml-sequence-line';
 import { UMLSequenceObjectNode } from './uml-sequence-diagram/uml-sequence-object-node/uml-sequence-object-node';
 import { UMLSequence } from './uml-sequence-diagram/uml-sequence/uml-sequence';
 import { UMLAbstractClass } from './uml-class-diagram/uml-abstract-class/uml-abstract-class';
@@ -93,6 +94,7 @@ export const UMLElements = {
   [UMLElementType.Sequence]: UMLSequence,
   [UMLElementType.SequenceActor]: UMLSequenceActor,
   [UMLElementType.SequenceForkNode]: UMLSequenceForkNode,
+  [UMLElementType.SequenceLine]: UMLSequenceLine,
   [UMLElementType.SequenceObjectNode]: UMLSequenceObjectNode,
   [UMLElementType.UseCase]: UMLUseCase,
   [UMLElementType.UseCaseActor]: UMLUseCaseActor,

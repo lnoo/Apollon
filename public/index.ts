@@ -4,8 +4,10 @@ import('./styles.css');
 
 const container = document.getElementById('apollon')!;
 let editor: Apollon.ApollonEditor | null = null;
+const model = JSON.parse(window.localStorage.getItem('apollon')!);
 let options: Apollon.ApollonOptions = {
-  model: JSON.parse(window.localStorage.getItem('apollon')!),
+  model,
+  type: model.type,
   colorEnabled: true,
   scale: 0.8,
 };

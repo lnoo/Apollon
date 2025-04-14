@@ -14,6 +14,7 @@ import { UMLActivityObjectNodeComponent } from './uml-activity-diagram/uml-activ
 import { UMLActivityComponent } from './uml-activity-diagram/uml-activity/uml-activity-component';
 import { UMLSequenceComponent } from './uml-sequence-diagram/uml-sequence/uml-sequence-component';
 import { UMLSequenceForkNodeComponent } from './uml-sequence-diagram/uml-sequence-fork-node/uml-sequence-fork-node-component';
+import { UMLSequenceLineComponent } from './uml-sequence-diagram/uml-sequence-line/uml-sequence-line-component';
 import { UMLSequenceControlFlowComponent } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow-component';
 import { UMLSequenceObjectNodeComponent } from './uml-sequence-diagram/uml-sequence-object-node/uml-sequence-object-node-component';
 import { UMLStateControlFlowComponent } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow-component';
@@ -102,6 +103,7 @@ export const Components: {
   [UMLElementType.Sequence]: UMLSequenceComponent,
   [UMLElementType.SequenceActor]: UMLUseCaseActorComponent,
   [UMLElementType.SequenceForkNode]: UMLSequenceForkNodeComponent,
+  [UMLElementType.SequenceLine]: UMLSequenceLineComponent,
   [UMLElementType.SequenceObjectNode]: UMLSequenceObjectNodeComponent,
   [UMLElementType.State]: UMLStateComponent,
   [UMLElementType.StateFinalNode]: UMLStateFinalNodeComponent,
