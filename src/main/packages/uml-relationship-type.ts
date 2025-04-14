@@ -1,5 +1,6 @@
 import { UMLDiagramType } from './diagram-type';
 import { ActivityRelationshipType } from './uml-activity-diagram';
+import { SequenceRelationshipType } from './uml-sequence-diagram';
 import { StateRelationshipType } from './uml-state-diagram';
 import { ClassRelationshipType } from './uml-class-diagram';
 import { CommunicationRelationshipType } from './uml-communication-diagram';
@@ -17,6 +18,7 @@ export type UMLRelationshipType =
   | keyof typeof ClassRelationshipType
   | keyof typeof ObjectRelationshipType
   | keyof typeof ActivityRelationshipType
+  | keyof typeof SequenceRelationshipType
   | keyof typeof StateRelationshipType
   | keyof typeof UseCaseRelationshipType
   | keyof typeof CommunicationRelationshipType
@@ -32,6 +34,7 @@ export const UMLRelationshipType = {
   ...ClassRelationshipType,
   ...ObjectRelationshipType,
   ...ActivityRelationshipType,
+  ...SequenceRelationshipType,
   ...StateRelationshipType,
   ...UseCaseRelationshipType,
   ...CommunicationRelationshipType,
@@ -49,6 +52,7 @@ export const DefaultUMLRelationshipType: { [key in UMLDiagramType]: UMLRelations
   [UMLDiagramType.ObjectDiagram]: ObjectRelationshipType.ObjectLink,
   [UMLDiagramType.ActivityDiagram]: ActivityRelationshipType.ActivityControlFlow,
   [UMLDiagramType.StateDiagram]: StateRelationshipType.StateControlFlow,
+  [UMLDiagramType.SequenceDiagram]: SequenceRelationshipType.SequenceControlFlow,
   [UMLDiagramType.UseCaseDiagram]: UseCaseRelationshipType.UseCaseAssociation,
   [UMLDiagramType.CommunicationDiagram]: CommunicationRelationshipType.CommunicationLink,
   [UMLDiagramType.ComponentDiagram]: ComponentRelationshipType.ComponentInterfaceProvided,

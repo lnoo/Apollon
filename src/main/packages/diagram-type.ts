@@ -14,5 +14,5 @@ export const UMLDiagramType = {
   SyntaxTree: 'SyntaxTree',
   Flowchart: 'Flowchart',
   BPMN: 'BPMN',
-  // SequenceDiagram: 'SequenceDiagram', //TODO: 添加顺序图
+  SequenceDiagram: 'SequenceDiagram',
 } as const;

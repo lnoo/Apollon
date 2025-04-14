@@ -4,10 +4,9 @@ import { DefaultRelationshipPopup } from './common/default-relationship-popup';
 import { UMLClassifierUpdate } from './common/uml-classifier/uml-classifier-update';
 import { UMLActivityControlFlowUpdate } from './uml-activity-diagram/uml-activity-control-flow/uml-activity-control-flow-update';
 import { UMLActivityMergeNodeUpdate } from './uml-activity-diagram/uml-activity-merge-node/uml-activity-merge-node-update';
-
 import { UMLStateControlFlowUpdate } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow-update';
 import { UMLStateMergeNodeUpdate } from './uml-state-diagram/uml-state-merge-node/uml-state-merge-node-update';
-
+import { UMLSequenceControlFlowUpdate } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow-update';
 import { UMLComponentSubsystemUpdate } from './uml-component-diagram/uml-component-subsystem/uml-component-subsystem-update';
 import { UMLComponentUpdate } from './common/uml-component/uml-component-update';
 import { UMLClassAssociationUpdate } from './uml-class-diagram/uml-class-association/uml-class-association-update';
@@ -61,6 +60,11 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLElementType.ActivityInitialNode]: DefaultPopup,
   [UMLElementType.ActivityMergeNode]: UMLActivityMergeNodeUpdate,
   [UMLElementType.ActivityObjectNode]: DefaultPopup,
+
+  [UMLElementType.Sequence]: DefaultPopup,
+  [UMLElementType.SequenceActor]: DefaultPopup,
+  [UMLElementType.SequenceObjectNode]: DefaultPopup,
+  [UMLElementType.SequenceForkNode]: DefaultPopup,
 
   [UMLElementType.State]: DefaultPopup,
   [UMLElementType.StateActionNode]: DefaultPopup,
@@ -118,6 +122,7 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLRelationshipType.ClassUnidirectional]: UMLClassAssociationUpdate,
   [UMLRelationshipType.ObjectLink]: DefaultRelationshipPopup,
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlowUpdate,
+  [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlowUpdate,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlowUpdate,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociationUpdate,
   [UMLRelationshipType.UseCaseExtend]: UMLUseCaseAssociationUpdate,

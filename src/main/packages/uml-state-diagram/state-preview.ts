@@ -17,13 +17,13 @@ export const composeStatePreview: ComposePreview = (layer: ILayer, translate: (i
   UMLStateForkNodeHorizontal.defaultWidth = Math.round(60 / 10) * 10;
   UMLStateForkNodeHorizontal.defaultHeight = Math.round(20 / 10) * 10;
   // State
-  const aa = new UMLState({ name: translate('packages.StateDiagram.State') });
-  aa.bounds = {
-    ...aa.bounds,
-    width: aa.bounds.width,
-    height: aa.bounds.height,
+  const state = new UMLState({ name: translate('packages.StateDiagram.State') });
+  state.bounds = {
+    ...state.bounds,
+    width: state.bounds.width,
+    height: state.bounds.height,
   };
-  elements.push(aa);
+  elements.push(state);
 
   // State Initial Node
   const stateInitialNode = new UMLStateInitialNode({

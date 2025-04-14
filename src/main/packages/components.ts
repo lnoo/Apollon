@@ -11,7 +11,10 @@ import { UMLActivityInitialNodeComponent } from './uml-activity-diagram/uml-acti
 import { UMLActivityMergeNodeComponent } from './uml-activity-diagram/uml-activity-merge-node/uml-activity-merge-node-component';
 import { UMLActivityObjectNodeComponent } from './uml-activity-diagram/uml-activity-object-node/uml-activity-object-node-component';
 import { UMLActivityComponent } from './uml-activity-diagram/uml-activity/uml-activity-component';
-
+import { UMLSequenceComponent } from './uml-sequence-diagram/uml-sequence/uml-sequence-component';
+import { UMLSequenceForkNodeComponent } from './uml-sequence-diagram/uml-sequence-fork-node/uml-sequence-fork-node-component';
+import { UMLSequenceControlFlowComponent } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow-component';
+import { UMLSequenceObjectNodeComponent } from './uml-sequence-diagram/uml-sequence-object-node/uml-sequence-object-node-component';
 import { UMLStateActionNodeComponent } from './uml-state-diagram/uml-state-action-node/uml-state-action-node-component';
 import { UMLStateControlFlowComponent } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow-component';
 import { UMLStateFinalNodeComponent } from './uml-state-diagram/uml-state-final-node/uml-state-final-node-component';
@@ -21,7 +24,6 @@ import { UMLStateInitialNodeComponent } from './uml-state-diagram/uml-state-init
 import { UMLStateMergeNodeComponent } from './uml-state-diagram/uml-state-merge-node/uml-state-merge-node-component';
 import { UMLStateObjectNodeComponent } from './uml-state-diagram/uml-state-object-node/uml-state-object-node-component';
 import { UMLStateComponent } from './uml-state-diagram/uml-state/uml-state-component';
-
 import { UMLClassPackageComponent } from './uml-class-diagram/uml-class-package/uml-class-package-component';
 import { UMLCommunicationLinkComponent } from './uml-communication-diagram/uml-communication-link/uml-communication-link-component';
 import { UMLDeploymentArtifactComponent } from './uml-deployment-diagram/uml-deployment-artifact/uml-deployment-artifact-component';
@@ -98,6 +100,10 @@ export const Components: {
   [UMLElementType.ActivityInitialNode]: UMLActivityInitialNodeComponent,
   [UMLElementType.ActivityMergeNode]: UMLActivityMergeNodeComponent,
   [UMLElementType.ActivityObjectNode]: UMLActivityObjectNodeComponent,
+  [UMLElementType.Sequence]: UMLSequenceComponent,
+  [UMLElementType.SequenceActor]: UMLUseCaseActorComponent,
+  [UMLElementType.SequenceForkNode]: UMLSequenceForkNodeComponent,
+  [UMLElementType.SequenceObjectNode]: UMLSequenceObjectNodeComponent,
   [UMLElementType.State]: UMLStateComponent,
   [UMLElementType.StateActionNode]: UMLStateActionNodeComponent,
   [UMLElementType.StateFinalNode]: UMLStateFinalNodeComponent,
@@ -153,6 +159,7 @@ export const Components: {
   [UMLRelationshipType.ObjectLink]: UMLObjectLinkComponent,
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlowComponent,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlowComponent,
+  [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlowComponent,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociationComponent,
   [UMLRelationshipType.UseCaseExtend]: UMLUseCaseExtendComponent,
   [UMLRelationshipType.UseCaseGeneralization]: UMLUseCaseGeneralizationComponent,

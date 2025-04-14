@@ -30,6 +30,8 @@ import { ColorLegend } from '../../packages/common/color-legend/color-legend';
 import { Separator } from './create-pane-styles';
 import { composeBPMNPreview } from '../../packages/bpmn/bpmn-diagram-preview';
 import { composeStatePreview } from '../../packages/uml-state-diagram/state-preview';
+import { composeSequencePreview } from '../../packages/uml-sequence-diagram/sequence-preview';
+
 
 type OwnProps = {};
 
@@ -73,6 +75,9 @@ const getInitialState = ({ type, canvas, translate, colorEnabled }: Props) => {
       break;
     case UMLDiagramType.DeploymentDiagram:
       previews.push(...composeDeploymentPreview(canvas, translate));
+      break;
+    case UMLDiagramType.SequenceDiagram:
+      previews.push(...composeSequencePreview(canvas, translate))
       break;
     case UMLDiagramType.PetriNet:
       previews.push(...composePetriNetPreview(canvas, translate));

@@ -73,11 +73,10 @@
       "StateControlFlow": "控制流"
     },
     "SequenceDiagram": {
+      "SequenceForkNode": "激活条",
+      "SequenceObjectNode": "对象",
       "SequenceActor": "参与者",
-      "SequenceObject": "对象",
-      "SequenceMessage": "消息",
-      "SequenceReply": "返回",
-      "SequenceActivation": "激活条"
+      "SequenceControlFlow": "消息"
     },
     "UseCaseDiagram": {
       "UseCase": "用例",

@@ -1,6 +1,7 @@
 import { IUMLRelationship, UMLRelationship } from '../services/uml-relationship/uml-relationship';
 import { UMLActivityControlFlow } from './uml-activity-diagram/uml-activity-control-flow/uml-activity-control-flow';
 import { UMLStateControlFlow } from './uml-state-diagram/uml-state-control-flow/uml-state-control-flow';
+import { UMLSequenceControlFlow } from './uml-sequence-diagram/uml-sequence-control-flow/uml-sequence-control-flow';
 import { UMLClassAggregation } from './uml-class-diagram/uml-class-aggregation/uml-class-aggregation';
 import { UMLClassBidirectional } from './uml-class-diagram/uml-class-bidirectional/uml-class-bidirectional';
 import { UMLClassComposition } from './uml-class-diagram/uml-class-composition/uml-class-composition';
@@ -41,6 +42,7 @@ export const UMLRelationships = {
   [UMLRelationshipType.ObjectLink]: UMLObjectLink,
   [UMLRelationshipType.ActivityControlFlow]: UMLActivityControlFlow,
   [UMLRelationshipType.StateControlFlow]: UMLStateControlFlow,
+  [UMLRelationshipType.SequenceControlFlow]: UMLSequenceControlFlow,
   [UMLRelationshipType.UseCaseAssociation]: UMLUseCaseAssociation,
   [UMLRelationshipType.UseCaseExtend]: UMLUseCaseExtend,
   [UMLRelationshipType.UseCaseGeneralization]: UMLUseCaseGeneralization,
