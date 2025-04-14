@@ -64,12 +64,10 @@
     },
     "StateDiagram": {
       "State": "状态",
-      "StateActionNode": "动作",
       "StateFinalNode": "结束节点",
       "StateForkNode": "分叉节点",
       "StateInitialNode": "初始节点",
       "StateMergeNode": "条件节点",
-      "StateObjectNode": "对象",
       "StateControlFlow": "控制流"
     },
     "SequenceDiagram": {

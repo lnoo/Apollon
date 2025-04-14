@@ -6,13 +6,11 @@ import { UMLActivityInitialNode } from './uml-activity-diagram/uml-activity-init
 import { UMLActivityMergeNode } from './uml-activity-diagram/uml-activity-merge-node/uml-activity-merge-node';
 import { UMLActivityObjectNode } from './uml-activity-diagram/uml-activity-object-node/uml-activity-object-node';
 import { UMLActivity } from './uml-activity-diagram/uml-activity/uml-activity';
-import { UMLStateActionNode } from './uml-state-diagram/uml-state-action-node/uml-state-action-node';
 import { UMLStateFinalNode } from './uml-state-diagram/uml-state-final-node/uml-state-final-node';
 import { UMLStateForkNode } from './uml-state-diagram/uml-state-fork-node/uml-state-fork-node';
 import { UMLStateForkNodeHorizontal } from './uml-state-diagram/uml-state-fork-node-horizontal/uml-state-fork-node-horizontal';
 import { UMLStateInitialNode } from './uml-state-diagram/uml-state-initial-node/uml-state-initial-node';
 import { UMLStateMergeNode } from './uml-state-diagram/uml-state-merge-node/uml-state-merge-node';
-import { UMLStateObjectNode } from './uml-state-diagram/uml-state-object-node/uml-state-object-node';
 import { UMLState } from './uml-state-diagram/uml-state/uml-state';
 import { UMLUseCaseActor as UMLSequenceActor } from './uml-use-case-diagram/uml-use-case-actor/uml-use-case-actor';
 import { UMLSequenceForkNode } from './uml-sequence-diagram/uml-sequence-fork-node/uml-sequence-fork-node';
@@ -89,8 +87,6 @@ export const UMLElements = {
   [UMLElementType.State]: UMLState,
   [UMLElementType.StateInitialNode]: UMLStateInitialNode,
   [UMLElementType.StateFinalNode]: UMLStateFinalNode,
-  [UMLElementType.StateActionNode]: UMLStateActionNode,
-  [UMLElementType.StateObjectNode]: UMLStateObjectNode,
   [UMLElementType.StateForkNode]: UMLStateForkNode,
   [UMLElementType.StateForkNodeHorizontal]: UMLStateForkNodeHorizontal,
   [UMLElementType.StateMergeNode]: UMLStateMergeNode,

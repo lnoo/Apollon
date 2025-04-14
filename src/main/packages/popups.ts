@@ -67,13 +67,11 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLElementType.SequenceForkNode]: DefaultPopup,
 
   [UMLElementType.State]: DefaultPopup,
-  [UMLElementType.StateActionNode]: DefaultPopup,
   [UMLElementType.StateFinalNode]: DefaultPopup,
   [UMLElementType.StateForkNode]: DefaultPopup,
   [UMLElementType.StateForkNodeHorizontal]: DefaultPopup,
   [UMLElementType.StateInitialNode]: DefaultPopup,
   [UMLElementType.StateMergeNode]: UMLStateMergeNodeUpdate,
-  [UMLElementType.StateObjectNode]: DefaultPopup,
 
   [UMLElementType.UseCase]: DefaultPopup,
   [UMLElementType.UseCaseActor]: DefaultPopup,
