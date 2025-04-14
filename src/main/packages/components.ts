@@ -120,6 +120,7 @@ export const Components: {
   [UMLElementType.PetriNetPlace]: UMLPetriNetPlaceComponent,
   [UMLElementType.ReachabilityGraphMarking]: UMLReachabilityGraphMarkingComponent,
   [UMLElementType.CommunicationLinkMessage]: UMLClassifierMemberComponent,
+  [UMLElementType.CommunicationActor]: UMLUseCaseActorComponent,
   [UMLElementType.SyntaxTreeTerminal]: SyntaxTreeTerminalComponent,
   [UMLElementType.SyntaxTreeNonterminal]: SyntaxTreeNonterminalComponent,
   [UMLElementType.FlowchartTerminal]: FlowchartTerminalComponent,

@@ -5,6 +5,7 @@ import { ComposePreview } from '../compose-preview';
 import { UMLObjectAttribute } from '../uml-object-diagram/uml-object-attribute/uml-object-attribute';
 import { UMLObjectName } from '../uml-object-diagram/uml-object-name/uml-object-name';
 import { UMLUseCaseActor } from '../uml-use-case-diagram/uml-use-case-actor/uml-use-case-actor';
+import { CommunicationElementType } from '.';
 
 export const composeCommunicationPreview: ComposePreview = (
   layer: ILayer,
@@ -15,6 +16,7 @@ export const composeCommunicationPreview: ComposePreview = (
   // Actor
   const umlActor = new UMLUseCaseActor({
     name: translate('packages.CommunicationDiagram.CommunicationActor'),
+    type: CommunicationElementType.CommunicationActor,
     bounds: {
       x: 0,
       y: 0,

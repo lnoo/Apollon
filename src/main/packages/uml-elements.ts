@@ -38,6 +38,7 @@ import { UMLPetriNetTransition } from './uml-petri-net/uml-petri-net-transition/
 import { UMLPetriNetPlace } from './uml-petri-net/uml-petri-net-place/uml-petri-net-place';
 import { UMLReachabilityGraphMarking } from './uml-reachability-graph/uml-reachability-graph-marking/uml-reachability-graph-marking';
 import { CommunicationLinkMessage } from './uml-communication-diagram/uml-communication-link/uml-communiction-link-message';
+import { UMLUseCaseActor as CommunicationActor } from './uml-use-case-diagram/uml-use-case-actor/uml-use-case-actor';
 import { UMLDeploymentComponent } from './uml-deployment-diagram/uml-deployment-component/uml-component';
 import { UMLComponentComponent } from './uml-component-diagram/uml-component/uml-component-component';
 import { UMLSubsystem } from './uml-component-diagram/uml-component-subsystem/uml-component-subsystem';
@@ -107,6 +108,7 @@ export const UMLElements = {
   [UMLElementType.PetriNetTransition]: UMLPetriNetTransition,
   [UMLElementType.ReachabilityGraphMarking]: UMLReachabilityGraphMarking,
   [UMLElementType.CommunicationLinkMessage]: CommunicationLinkMessage,
+  [UMLElementType.CommunicationActor]: CommunicationActor,
   [UMLElementType.SyntaxTreeTerminal]: SyntaxTreeTerminal,
   [UMLElementType.SyntaxTreeNonterminal]: SyntaxTreeNonterminal,
   [UMLElementType.FlowchartTerminal]: FlowchartTerminal,

@@ -4,4 +4,5 @@ export const CommunicationRelationshipType = {
 
 export const CommunicationElementType = {
   CommunicationLinkMessage: 'CommunicationLinkMessage',
+  CommunicationActor: 'CommunicationActor',
 } as const;

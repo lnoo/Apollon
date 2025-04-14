@@ -85,6 +85,7 @@ export const Popups: { [key in UMLElementType | UMLRelationshipType]: ComponentT
   [UMLElementType.PetriNetTransition]: DefaultPopup,
   [UMLElementType.ReachabilityGraphMarking]: UMLReachabilityGraphMarkingUpdate,
   [UMLElementType.CommunicationLinkMessage]: null,
+  [UMLElementType.CommunicationActor]: DefaultPopup,
   [UMLElementType.SyntaxTreeTerminal]: SyntaxTreeTerminalUpdate,
   [UMLElementType.SyntaxTreeNonterminal]: SyntaxTreeNonterminalUpdate,
   [UMLElementType.FlowchartTerminal]: FlowchartTerminalUpdate,
