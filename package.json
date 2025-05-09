@@ -36,7 +36,7 @@
     "test:coverage": "jest --collectCoverage -w=4",
     "test:watch": "jest --watch -w=4",
     "update": "ncu -i --format group",
-    "publish": "npm run prepare && npm run test && npm run build:pure && npm run docs:copy-api && npm version major && npm publish",
+    "publish": "npm run prepare && npm run build && npm version major && npm publish --access public",
     "docs:copy-api": "cp lib/es6/apollon-editor.d.ts lib/es6/typings.d.ts lib/es6/compat/helpers.d.ts docs/source/user/api && cp lib/es6/packages/diagram-type.d.ts docs/dev/api",
     "docs:prepare": "npm run docs:copy-api && cd docs && pip3 install -r requirements.txt",
     "docs:build": "cd docs && make clean && make html",
