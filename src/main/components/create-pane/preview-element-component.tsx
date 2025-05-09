@@ -24,11 +24,11 @@ export const Preview = styled(hoverable(CanvasElement)).attrs((props: { scale?: 
 
 export class PreviewElementComponent extends Component<Props> {
   render() {
-    const { element } = this.props;
+    const { element, scale } = this.props;
 
     return (
       <Draggable onDrop={this.onDrop}>
-        <Preview id={element.id} />
+        <Preview id={element.id} scale={scale} />
       </Draggable>
     );
   }

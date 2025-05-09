@@ -29,6 +29,7 @@ export type ApollonOptions = {
   copyPasteToClipboard?: boolean;
   colorEnabled?: boolean;
   scale?: number;
+  previewScale?: number;
 };
 
 export type Selection = {

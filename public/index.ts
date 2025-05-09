@@ -8,8 +8,14 @@ const model = JSON.parse(window.localStorage.getItem('apollon')!);
 let options: Apollon.ApollonOptions = {
   model,
   type: model?.type,
-  colorEnabled: true,
-  scale: 0.8,
+  colorEnabled: false,
+  scale: 0.6,
+  previewScale: .8,
+  theme: {
+    font: {
+      size: 20
+    }
+  }
 };
 
 export const onChange = (event: MouseEvent) => {

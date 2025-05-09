@@ -126,15 +126,15 @@ export class ApollonEditor {
   ) {
     let state: PartialModelState | undefined = options.model
       ? ModelState.fromModel({
-          // @ts-ignore
-          interactive: {
-            elements: {},
-            relationships: {},
-          },
-          // @ts-ignore
-          assessments: {},
-          ...options.model,
-        })
+        // @ts-ignore
+        interactive: {
+          elements: {},
+          relationships: {},
+        },
+        // @ts-ignore
+        assessments: {},
+        ...options.model,
+      })
       : {};
 
     state = {
@@ -149,6 +149,7 @@ export class ApollonEditor {
         mode: options.mode || ApollonMode.Exporting,
         colorEnabled: options.colorEnabled || false,
         zoomFactor: options.scale || 1.0,
+        previewScaleFactor: options.previewScale || .8,
         readonly: options.readonly || false,
         enablePopups: options.enablePopups === true || options.enablePopups === undefined,
         enableCopyPasteToClipboard: options.copyPasteToClipboard === true,

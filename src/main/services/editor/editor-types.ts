@@ -32,6 +32,7 @@ export type EditorState = {
   readonly features: UMLElementFeatures;
   readonly colorEnabled: boolean;
   readonly zoomFactor: number;
+  readonly previewScaleFactor: number;
   readonly selectionBoxActive: boolean;
 };
 

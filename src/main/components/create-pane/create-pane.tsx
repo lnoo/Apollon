@@ -112,10 +112,13 @@ const enhance = compose<ComponentClass<OwnProps>>(
   localized,
   withCanvas,
   connect<StateProps, DispatchProps, OwnProps, ModelState>(
-    (state) => ({
-      type: state.diagram.type,
-      colorEnabled: state.editor.colorEnabled,
-    }),
+    (state) => {
+      return {
+        type: state.diagram.type,
+        colorEnabled: state.editor.colorEnabled,
+        previewScaleFactor: state.editor.previewScaleFactor
+      }
+    },
     {
       create: UMLElementRepository.create,
     },
@@ -126,16 +129,17 @@ class CreatePaneComponent extends Component<Props, State> {
   state = getInitialState(this.props);
 
   getElementArray = (previews: PreviewElement[]) => {
+    const scale = this.props?.previewScaleFactor ?? .8
     return Object.values(previews)
       .filter((preview) => !preview.owner)
       .map((preview, index) => {
         const { styles: previewStyles } = preview;
         return (
           <div
-            style={{ ...previewStyles, height: preview.bounds.height * (this.props?.previewScaleFactor ?? 0.8) + 8 }}
+            style={{ ...previewStyles, height: preview.bounds.height * scale + 8 }}
             key={index}
           >
-            <PreviewElementComponent element={preview} create={this.create} />
+            <PreviewElementComponent element={preview} create={this.create} scale={scale} />
           </div>
         );
       });
