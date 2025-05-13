@@ -9,13 +9,13 @@ let options: Apollon.ApollonOptions = {
   model,
   type: model?.type,
   colorEnabled: false,
-  scale: 0.6,
-  previewScale: .8,
+  scale: 0.55,
+  previewScale: 0.55,
   theme: {
     font: {
-      size: 20
-    }
-  }
+      size: 20,
+    },
+  },
 };
 
 export const onChange = (event: MouseEvent) => {
