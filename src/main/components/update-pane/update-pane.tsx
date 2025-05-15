@@ -25,6 +25,8 @@ type StateProps = {
   element: IUMLElement | null;
   disabled: boolean;
   mode: ApollonMode;
+  popoverScale: number;
+  scale: number;
 };
 
 type DispatchProps = {
@@ -42,6 +44,8 @@ const enhance = compose<ComponentClass<OwnProps>>(
       element: state.elements[state.updating[0]],
       disabled: !state.editor.enablePopups,
       mode: state.editor.mode,
+      popoverScale: state.editor.popoverScaleFactor,
+      scale: state.editor.zoomFactor,
     }),
     {
       updateEnd: UMLElementRepository.updateEnd,
@@ -74,7 +78,7 @@ class UnwrappedUpdatePane extends Component<Props, State> {
   }
 
   render() {
-    const { element, disabled, mode } = this.props;
+    const { element, disabled, mode, popoverScale } = this.props;
     const { position, alignment, placement } = this.state;
 
     if (!element || disabled || !position) {
@@ -90,9 +94,8 @@ class UnwrappedUpdatePane extends Component<Props, State> {
     if (!CustomPopupComponent) {
       return null;
     }
-
     return createPortal(
-      <Popover ref={this.popover} position={position} placement={placement} alignment={alignment} maxHeight={500}>
+      <Popover ref={this.popover} popoverScale={popoverScale} position={position} placement={placement} alignment={alignment} maxHeight={500}>
         <CustomPopupComponent element={element} />
       </Popover>,
       this.props.root,
@@ -123,34 +126,41 @@ class UnwrappedUpdatePane extends Component<Props, State> {
     }
   };
 
-  private position = ({ element, canvas }: Readonly<Props>): void => {
+  private position = ({ element, canvas, scale }: Readonly<Props>): void => {
     const container: HTMLElement | null = canvas.layer.parentElement;
 
+
     if (element && container) {
-      const absolute: Point = this.props
-        // relative to drawing area (0,0)
-        .getAbsolutePosition(element.id)
+      const elementWidth = element.bounds.width * scale
+      const elementHeight = element.bounds.height * scale
+
+      // relative to drawing area (0,0)
+      const scaleAbsolute = this.props.getAbsolutePosition(element.id)
+      scaleAbsolute.x *= scale
+      scaleAbsolute.y *= scale
+
+      const absolute: Point = scaleAbsolute
         .add(
           canvas
             .origin()
             .subtract(this.props.root.getBoundingClientRect().x, this.props.root.getBoundingClientRect().y),
         );
 
-      const elementCenter: Point = absolute.add(element.bounds.width / 2, element.bounds.height / 2);
+      const elementCenter: Point = absolute.add(elementWidth / 2, elementHeight / 2);
 
       const position = absolute;
 
       // calculate if element is in half or right position of canvas (drawing area) and align popup
       const canvasBounds: ClientRect = container.getBoundingClientRect();
-      const placement = elementCenter.x < canvasBounds.width / 2 ? 'right' : 'left';
-      const alignment = elementCenter.y < canvasBounds.height / 2 ? 'start' : 'end';
+      const placement = (elementCenter.x + (this.props.root.getBoundingClientRect().x - canvasBounds.x)) < canvasBounds.width / 2 ? 'right' : 'left';
+      const alignment = (elementCenter.y + (this.props.root.getBoundingClientRect().y - canvasBounds.y)) < canvasBounds.height / 2 ? 'start' : 'end';
 
       if (UMLRelationship.isUMLRelationship(element)) {
         const path = new Path(element.path);
 
         const p = path.position(path.length / 2);
-        position.x += p.x;
-        position.y += p.y;
+        position.x += p.x * scale;
+        position.y += p.y * scale;
 
         if (alignment === 'start') {
           position.y -= 15;
@@ -161,11 +171,11 @@ class UnwrappedUpdatePane extends Component<Props, State> {
       } else {
         if (placement === 'right') {
           // add width to be on right side of element
-          position.x += element.bounds.width;
+          position.x += elementWidth;
         }
         if (alignment === 'end') {
           // add height to be at the bottom of element
-          position.y += element.bounds.height;
+          position.y += elementHeight;
         }
       }
 

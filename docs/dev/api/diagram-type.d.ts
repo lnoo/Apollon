@@ -4,7 +4,7 @@ export declare const UMLDiagramType: {
   readonly ObjectDiagram: 'ObjectDiagram';
   readonly ActivityDiagram: 'ActivityDiagram';
   readonly StateDiagram: 'StateDiagram';
-  //   readonly SequenceDiagram: 'SequenceDiagram'; //TODO: 待添加
+  readonly SequenceDiagram: 'SequenceDiagram';
   readonly UseCaseDiagram: 'UseCaseDiagram';
   readonly CommunicationDiagram: 'CommunicationDiagram';
   readonly ComponentDiagram: 'ComponentDiagram';

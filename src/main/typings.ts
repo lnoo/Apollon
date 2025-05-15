@@ -30,6 +30,7 @@ export type ApollonOptions = {
   colorEnabled?: boolean;
   scale?: number;
   previewScale?: number;
+  popoverScale?: number;
 };
 
 export type Selection = {

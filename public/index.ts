@@ -1,5 +1,6 @@
 import * as Apollon from '../src/main';
 import * as themings from './themings.json';
+// @ts-ignore
 import('./styles.css');
 
 const container = document.getElementById('apollon')!;
@@ -9,8 +10,9 @@ let options: Apollon.ApollonOptions = {
   model,
   type: model?.type,
   colorEnabled: false,
-  scale: 0.55,
-  previewScale: 0.55,
+  scale: 0.6,
+  previewScale: 0.6,
+  popoverScale: 0.7,
   theme: {
     font: {
       size: 20,
@@ -75,6 +77,7 @@ export const draw = async (mode?: 'include' | 'exclude') => {
 
   const exportParam = mode ? { [mode]: filter, scale: editor.getScaleFactor() } : { scale: editor.getScaleFactor() };
 
+  // @ts-ignore
   const { svg }: Apollon.SVG = await editor.exportAsSVG(exportParam);
   const svgBlob = new Blob([svg], { type: 'image/svg+xml' });
   const svgBlobURL = URL.createObjectURL(svgBlob);

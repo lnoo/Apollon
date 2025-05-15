@@ -33,6 +33,7 @@ export type EditorState = {
   readonly colorEnabled: boolean;
   readonly zoomFactor: number;
   readonly previewScaleFactor: number;
+  readonly popoverScaleFactor: number;
   readonly selectionBoxActive: boolean;
 };
 

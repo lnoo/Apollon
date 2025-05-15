@@ -10,7 +10,8 @@ const initialState: EditorState = {
   mode: ApollonMode.Exporting,
   view: ApollonView.Modelling,
   zoomFactor: 1.0,
-  previewScaleFactor: .8,
+  previewScaleFactor: 0.8,
+  popoverScaleFactor: 1,
   selectionBoxActive: false,
   features: {
     hoverable: true,

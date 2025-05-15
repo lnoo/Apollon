@@ -38,30 +38,44 @@ export const PopoverContainer = styled.div<Props>`
   }
 
   ${(props) => {
+    const { popoverScale } = props;
     let x = `${props.position.x}px`;
     let y = `${props.position.y}px`;
+
     const alignment = props.alignment === 'start' ? 0 : props.alignment === 'end' ? 100 : 50;
+
+    let transformOrigin = 'center';
+
     switch (props.placement) {
       case 'top':
         x += ` - ${alignment}%`;
         y += ` - 100% - 0.5em`;
+        transformOrigin =
+          props.alignment === 'start' ? 'left bottom' : props.alignment === 'end' ? 'right bottom' : 'center bottom';
         break;
       case 'right':
         x += ` + 0.5em`;
         y += ` - ${alignment}%`;
+        transformOrigin =
+          props.alignment === 'start' ? 'left top' : props.alignment === 'end' ? 'left bottom' : 'left center';
         break;
       case 'bottom':
         x += ` - ${alignment}%`;
         y += ` + 0.5em`;
+        transformOrigin =
+          props.alignment === 'start' ? 'left top' : props.alignment === 'end' ? 'right top' : 'center top';
         break;
       case 'left':
         x += ` - 100% - 0.5em`;
         y += ` - ${alignment}%`;
+        transformOrigin =
+          props.alignment === 'start' ? 'right top' : props.alignment === 'end' ? 'right bottom' : 'right center';
         break;
     }
 
     return css`
-      transform: translate(calc(${x}), calc(${y}));
+      transform: translate(calc(${x}), calc(${y})) scale(${popoverScale});
+      transform-origin: ${transformOrigin};
     `;
   }}
 `;
