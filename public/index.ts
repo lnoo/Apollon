@@ -10,12 +10,13 @@ let options: Apollon.ApollonOptions = {
   model,
   type: model?.type,
   colorEnabled: false,
-  scale: 0.6,
-  previewScale: 0.6,
-  popoverScale: 0.7,
+  scale: 0.55,
+  previewScale: 0.4,
+  copyPasteToClipboard: true,
+  popoverScale: 0.65,
   theme: {
     font: {
-      size: 20,
+      size: 30,
     },
   },
 };

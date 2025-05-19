@@ -60,7 +60,6 @@ export function clone(element: UMLElement, elements: UMLElement[]): UMLElement[]
     if (!child) {
       continue;
     }
-
     const [clonedChild, ...clonedChildren] = clone(child, elements);
     clonedChild.owner = cloned.id;
 
@@ -70,4 +69,33 @@ export function clone(element: UMLElement, elements: UMLElement[]): UMLElement[]
   }
 
   return [cloned, ...result];
+}
+
+export function cloneWithCloneMap(element: UMLElement, elements: UMLElement[]): [UMLElement[], Record<string, string>] {
+  const cloneMap: Record<string, string> = {};
+  const result: UMLElement[] = [];
+
+  function recursiveClone(el: UMLElement): UMLElement {
+    const cloned = el.clone();
+    cloneMap[el.id] = cloned.id;
+    result.push(cloned);
+
+    if (UMLContainer.isUMLContainer(el)) {
+      const container = cloned as UMLContainer;
+      for (let i = 0; i < el.ownedElements.length; i++) {
+        const childId = el.ownedElements[i];
+        const child = elements.find((e) => e.id === childId);
+        if (!child) continue;
+
+        const clonedChild = recursiveClone(child);
+        clonedChild.owner = cloned.id;
+        container.ownedElements[i] = clonedChild.id;
+      }
+    }
+
+    return cloned;
+  }
+
+  recursiveClone(element);
+  return [result, cloneMap];
 }

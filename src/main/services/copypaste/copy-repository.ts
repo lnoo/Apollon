@@ -1,5 +1,5 @@
 import { AsyncAction } from '../../utils/actions/actions';
-import { clone, filterRoots, getChildren } from '../../utils/geometry/tree';
+import { cloneWithCloneMap, filterRoots, getChildren } from '../../utils/geometry/tree';
 import { IPoint } from '../../utils/geometry/point';
 import { notEmpty } from '../../utils/not-empty';
 import { IUMLElement, UMLElement } from '../uml-element/uml-element';
@@ -21,12 +21,12 @@ export class CopyRepository {
       CopyRepository.pasteCounter = 0;
       const { elements, selected } = getState();
       const ids = id ? (Array.isArray(id) ? id : [id]) : selected;
-
       // copy elements with all their child elements, because containers do not know their full children representation
       const idsToClone = getChildren(ids, getState().elements);
-
       const result: UMLElement[] = idsToClone
-        .map((idToClone) => UMLElementRepository.get(elements[idToClone]))
+        .map((idToClone) => {
+          return UMLElementRepository.get(elements[idToClone]) || UMLRelationshipRepository.get(elements[idToClone]);
+        })
         .filter(notEmpty);
       if (getState().editor.enableCopyPasteToClipboard) {
         navigator.clipboard.writeText(JSON.stringify(result));
@@ -54,15 +54,37 @@ export class CopyRepository {
             .map((x) => UMLElementRepository.get(x))
             .filter(notEmpty)
             .filter((element) => element.type in UMLElementsForDiagram[currentDiagramType]);
-          return CopyRepository.transformElementsForCopy(diagramElements);
+
+          const relationshipsToCopy: UMLRelationship[] = parsedElements
+            .map((element) => UMLRelationshipRepository.get(element))
+            .filter(notEmpty)
+            .filter(
+              (relationship) =>
+                relationship.source &&
+                relationship.target &&
+                parsedElements.some((el) => el.id === relationship.source.element) &&
+                parsedElements.some((el) => el.id === relationship.target.element),
+            );
+
+          const copiedDiagramElements = CopyRepository.transformElementsForCopy(diagramElements);
+
+          const copiedRelationships =
+            copiedDiagramElements.copiedElements.length > 0
+              ? CopyRepository.transformRelationshipsForCopy(relationshipsToCopy, copiedDiagramElements.cloneMap)
+              : [];
+
+          return { copiedDiagramElements, copiedRelationships };
         })
-        .then(({ copiedElements }) => {
+        .then(({ copiedDiagramElements: { copiedElements }, copiedRelationships }) => {
           dispatch(UMLElementRepository.create(copiedElements));
           dispatch(UMLElementRepository.deselect());
+
+          dispatch(UMLElementRepository.create(copiedRelationships));
+
           dispatch(
             UMLElementRepository.select(
               filterRoots(
-                copiedElements.map((element) => element.id),
+                [...copiedElements, ...copiedRelationships].map((element) => element.id),
                 getState().elements,
               ),
             ),
@@ -86,14 +108,13 @@ export class CopyRepository {
             copy.includes(relationship.source.element) &&
             copy.includes(relationship.target.element),
         );
-
       const { copiedElements, cloneMap } = CopyRepository.transformElementsForCopy(elementsToCopy);
-
       dispatch(UMLElementRepository.create(copiedElements));
-      dispatch(UMLElementRepository.deselect());
 
       const copiedRelationships = CopyRepository.transformRelationshipsForCopy(relationshipsToCopy, cloneMap);
       dispatch(UMLElementRepository.create(copiedRelationships));
+
+      dispatch(UMLElementRepository.deselect());
       dispatch(
         UMLElementRepository.select(
           filterRoots(
@@ -113,15 +134,15 @@ export class CopyRepository {
     const roots = umlElements.filter(
       (element) => !element.owner || umlElements.every((innerElement) => innerElement.id !== element.owner),
     );
-    const cloneMap: { [key: string]: string } = {};
+    let cloneMap: { [key: string]: string } = {};
     // flat map elements to copies
     const copies: UMLElement[] = roots.reduce((clonedElements: UMLElement[], element: UMLElement) => {
       element.owner = null;
       element.bounds.x = element.bounds.x + 10 * CopyRepository.pasteCounter;
       element.bounds.y = element.bounds.y + 10 * CopyRepository.pasteCounter;
 
-      const clones = clone(element, umlElements);
-      cloneMap[element.id] = clones[0].id;
+      const [clones, map] = cloneWithCloneMap(element, umlElements);
+      cloneMap = { ...cloneMap, ...map };
       return clonedElements.concat(...clones);
     }, []);
 
@@ -142,6 +163,7 @@ export class CopyRepository {
       element.owner = null;
       element.bounds.x = element.bounds.x + 10 * CopyRepository.pasteCounter;
       element.bounds.y = element.bounds.y + 10 * CopyRepository.pasteCounter;
+
       element.source.element = cloneMap[element.source.element];
       element.target.element = cloneMap[element.target.element];
       const newPath = element.path.map((pathPoint) => ({ x: pathPoint.x + 10, y: pathPoint.y + 10 }) as IPoint);

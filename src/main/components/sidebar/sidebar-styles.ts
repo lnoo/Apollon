@@ -4,7 +4,7 @@ export type ContainerProps = {};
 
 export const Container = styled.aside.attrs<ContainerProps>({})<ContainerProps>`
   flex: 0 0 148px;
-  padding: 0 10px;
+  padding: 10px;
   height: 100%;
   min-height: inherit;
   max-height: inherit;
