@@ -32,8 +32,8 @@ export const UMLUseCaseIncludeComponent: FunctionComponent<Props> = ({ element }
 
   const norm = line.normalize();
   const center = start.add(norm.scale(0.5 * line.length));
-  const startSection = start.add(norm.scale(0.5 * line.length - 40));
-  const endSection = end.subtract(norm.scale(0.5 * line.length - 40));
+  const startSection = start.add(norm.scale(0.5 * line.length - 60));
+  const endSection = end.subtract(norm.scale(0.5 * line.length - 60));
   return (
     <g>
       <Arrow
