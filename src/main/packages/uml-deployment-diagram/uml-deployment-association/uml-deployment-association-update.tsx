@@ -76,9 +76,9 @@ class DeploymentAssociationUpdate extends Component<Props, State> {
             <Dropdown.Item value={DeploymentRelationshipType.DeploymentAssociation}>
               {this.props.translate('packages.DeploymentDiagram.DeploymentAssociation')}
             </Dropdown.Item>
-            <Dropdown.Item value={DeploymentRelationshipType.DeploymentDependency}>
+            {/* <Dropdown.Item value={DeploymentRelationshipType.DeploymentDependency}>
               {this.props.translate('packages.DeploymentDiagram.DeploymentDependency')}
-            </Dropdown.Item>
+            </Dropdown.Item> */}
             <Dropdown.Item value={DeploymentRelationshipType.DeploymentInterfaceProvided}>
               {this.props.translate('packages.DeploymentDiagram.DeploymentInterfaceProvided')}
             </Dropdown.Item>
@@ -117,10 +117,10 @@ class DeploymentAssociationUpdate extends Component<Props, State> {
 
 type OwnProps = {
   element:
-    | UMLDeploymentAssociation
-    | UMLDeploymentInterfaceRequired
-    | UMLDeploymentInterfaceProvided
-    | UMLDeploymentDependency;
+  | UMLDeploymentAssociation
+  | UMLDeploymentInterfaceRequired
+  | UMLDeploymentInterfaceProvided
+  | UMLDeploymentDependency;
 };
 
 type StateProps = {};

@@ -58,9 +58,9 @@ class ComponentAssociationUpdate extends Component<Props, State> {
         </section>
         <section>
           <Dropdown value={element.type as keyof typeof ComponentRelationshipType} onChange={this.onChange}>
-            <Dropdown.Item value={ComponentRelationshipType.ComponentDependency}>
+            {/* <Dropdown.Item value={ComponentRelationshipType.ComponentDependency}>
               {this.props.translate('packages.ComponentDiagram.ComponentDependency')}
-            </Dropdown.Item>
+            </Dropdown.Item> */}
             <Dropdown.Item value={ComponentRelationshipType.ComponentInterfaceProvided}>
               {this.props.translate('packages.ComponentDiagram.ComponentInterfaceProvided')}
             </Dropdown.Item>

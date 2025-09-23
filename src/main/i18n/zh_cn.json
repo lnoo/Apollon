@@ -98,7 +98,7 @@
       "ComponentDependency": "依赖",
       "ComponentInterface": "接口",
       "ComponentInterfaceProvided": "提供接口",
-      "ComponentInterfaceRequired": "需要接口"
+      "ComponentInterfaceRequired": "依赖接口"
     },
     "DeploymentDiagram": {
       "DeploymentNode": "节点",
