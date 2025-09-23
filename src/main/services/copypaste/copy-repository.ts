@@ -14,22 +14,23 @@ export class CopyRepository {
    * Counts how often paste commands are executed to set offset
    */
   static pasteCounter = 0;
-
   static copy =
     (id?: string | string[]): AsyncAction =>
     (dispatch, getState): CopyAction | undefined => {
       CopyRepository.pasteCounter = 0;
       const { elements, selected } = getState();
       const ids = id ? (Array.isArray(id) ? id : [id]) : selected;
-      // copy elements with all their child elements, because containers do not know their full children representation
+
       const idsToClone = getChildren(ids, getState().elements);
       const result: UMLElement[] = idsToClone
         .map((idToClone) => {
           return UMLElementRepository.get(elements[idToClone]) || UMLRelationshipRepository.get(elements[idToClone]);
         })
         .filter(notEmpty);
+
       if (getState().editor.enableCopyPasteToClipboard) {
-        navigator.clipboard.writeText(JSON.stringify(result));
+        const text = JSON.stringify(result);
+        localStorage.setItem('apollon_copy_66b0b6a1', text);
         return;
       } else {
         return dispatch<CopyAction>({
@@ -44,12 +45,15 @@ export class CopyRepository {
     CopyRepository.pasteCounter++;
 
     if (getState().editor.enableCopyPasteToClipboard) {
-      navigator.clipboard
-        .readText()
+      let readPromise: Promise<string>;
+
+      readPromise = Promise.resolve(localStorage.getItem('apollon_copy_66b0b6a1') || '[]');
+
+      readPromise
         .then((value) => {
           const parsedElements: IUMLElement[] = JSON.parse(value);
           const currentDiagramType = getState().diagram.type;
-          // all elements must be supported Apollon elements and part of the current diagram type
+
           const diagramElements: UMLElement[] = parsedElements
             .map((x) => UMLElementRepository.get(x))
             .filter(notEmpty)
@@ -78,9 +82,7 @@ export class CopyRepository {
         .then(({ copiedDiagramElements: { copiedElements }, copiedRelationships }) => {
           dispatch(UMLElementRepository.create(copiedElements));
           dispatch(UMLElementRepository.deselect());
-
           dispatch(UMLElementRepository.create(copiedRelationships));
-
           dispatch(
             UMLElementRepository.select(
               filterRoots(
@@ -92,12 +94,17 @@ export class CopyRepository {
         });
     } else {
       const { copy } = getState();
-      dispatch<PasteAction>({ type: CopyActionTypes.PASTE, payload: {}, undoable: false });
+      dispatch<PasteAction>({
+        type: CopyActionTypes.PASTE,
+        payload: {},
+        undoable: false,
+      });
       const { elements } = getState();
 
       const elementsToCopy: UMLElement[] = copy
         .map((IdOfCopyElement) => UMLElementRepository.get(elements[IdOfCopyElement]))
         .filter(notEmpty);
+
       const relationshipsToCopy: UMLRelationship[] = copy
         .map((IdOfCopyElement) => UMLRelationshipRepository.get(elements[IdOfCopyElement]))
         .filter(notEmpty)
@@ -108,7 +115,9 @@ export class CopyRepository {
             copy.includes(relationship.source.element) &&
             copy.includes(relationship.target.element),
         );
+
       const { copiedElements, cloneMap } = CopyRepository.transformElementsForCopy(elementsToCopy);
+
       dispatch(UMLElementRepository.create(copiedElements));
 
       const copiedRelationships = CopyRepository.transformRelationshipsForCopy(relationshipsToCopy, cloneMap);
