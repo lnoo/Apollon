@@ -93,17 +93,46 @@ class EditorComponent extends Component<Props, State> {
   zoomContainer = createRef<HTMLDivElement>();
 
   componentDidMount() {
-    window.addEventListener(
-      'wheel',
-      (event) => {
-        if (event.ctrlKey) {
-          event.preventDefault();
-        }
-      },
-      { passive: false },
-    );
-  }
+    // 阻止浏览器 Ctrl/Cmd + 滚轮 默认行为
+    window.addEventListener('wheel', this.handleWheelZoom, { passive: false });
 
+    // 监听 Ctrl/Cmd + +/- 键盘缩放
+    window.addEventListener('keydown', this.handleKeyZoom);
+  }
+  componentWillUnmount() {
+    window.removeEventListener('wheel', this.handleWheelZoom);
+    window.removeEventListener('keydown', this.handleKeyZoom);
+  }
+  /** Ctrl/Cmd + 鼠标滚轮缩放 */
+  handleWheelZoom = (event: WheelEvent) => {
+    const { setZoomFactor, scale } = this.props;
+    if (!(event.ctrlKey || event.metaKey)) return;
+
+    event.preventDefault(); // 阻止浏览器缩放网页
+
+    const delta = event.deltaY < 0 ? 1 : -1; // 向上滚放大，向下滚缩小
+    const step = 0.2;
+    const newScale = clamp(scale + delta * step, minScale, maxScale);
+    setZoomFactor(newScale);
+  };
+
+  /** Ctrl/Cmd + +/- 键盘缩放 */
+  handleKeyZoom = (event: KeyboardEvent) => {
+    const { setZoomFactor, scale } = this.props;
+    const step = 0.2;
+
+    if (!(event.ctrlKey || event.metaKey)) return;
+
+    if (event.key === '+' || event.key === '=' || event.code === 'Equal') {
+      event.preventDefault();
+      setZoomFactor(clamp(scale + step, minScale, maxScale));
+    }
+
+    if (event.key === '-' || event.code === 'Minus') {
+      event.preventDefault();
+      setZoomFactor(clamp(scale - step, minScale, maxScale));
+    }
+  };
   componentDidUpdate(prevProps: Readonly<Props>, prevState: Readonly<State>, snapshot?: any) {
     if (this.state.isMobile) {
       if (this.editor.current) {
